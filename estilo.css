@@ -1,0 +1,739 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+@media only screen and (min-width: 375px) {
+  .container {
+    width: 75%;
+  }
+  .resultado {
+    width: 75%;
+    margin-left: 45%;
+    margin-top: 20%;
+    margin-bottom: 15%;
+  }
+  .rollDices {
+    width: 75%;
+  }
+  .logo {
+    width: 75%;
+  }
+}
+
+@media only screen and (min-width: 450px) {
+  .container {
+    width: 75%;
+  }
+  .resultado {
+    width: 75%;
+    margin-left: 60%;
+    margin-top: 20%;
+    margin-bottom: 15%;
+  }
+  .rollDices {
+    width: 75%;
+  }
+  .logo {
+    width: 75%;
+  }
+}
+
+@media only screen and (min-width: 650px) {
+  .container {
+    width: 65%;
+  }
+  .resultado {
+    width: 65%;
+    margin-left: 60%;
+    margin-top: 20%;
+    margin-bottom: 15%;
+  }
+  .rollDices {
+    width: 65%;
+  }
+  .logo {
+    width: 65%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .container {
+    width: 65%;
+  }
+  .resultado {
+    width: 65%;
+  }
+  .rollDices {
+    width: 65%;
+  }
+  .logo {
+    width: 65%;
+  }
+}
+
+@media only screen and (min-width: 1342px) {
+  .container {
+    width: 62%;
+  }
+  .resultado {
+    width: 62%;
+  }
+  .rollDices {
+    width: 62%;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .container {
+    width: 50%;
+  }
+  .resultado {
+    width: 50%;
+  }
+  .rollDices {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .container {
+    width: 40%;
+  }
+  .resultado {
+    width: 40%;
+  }
+  .rollDices {
+    width: 40%;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  } /* Webkit */
+}
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.3;
+  } /* Padrão */
+}
+@-webkit-keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.3;
+  } /* Webkit */
+}
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  background-color: #0a0b0c;
+  color: white;
+  font-family: "Itim", sans-serif;
+  margin-top: -20px;
+  animation: fadein 1s;
+}
+.container {
+  display: grid;
+  grid-template-areas:
+    "details details details character"
+    "attributes attributes attributes expertise"
+    "combat combat combat combat"
+    "expertise2 expertise2 expertise2 expertise2";
+  grid-gap: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.details {
+  grid-area: details;
+  height: auto;
+  width: 466px;
+}
+.divLS{
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    justify-content: center;
+}
+.save{
+    padding: 10px;
+    margin: 20px;
+    cursor: pointer;
+    background-color: #0a0b0c;
+    color: white;
+    font-family: "Itim", sans-serif;
+    font-size: 15px;
+    border: 1px solid;
+    border-radius: 2px;
+}
+#clear{
+    color: #640c0c;
+    border-color: #640c0c;
+}
+.border {
+  border: solid;
+  border-width: 0.1px;
+  border-color: #a2a2a2;
+}
+hr {
+  border-top: 1px solid #a2a2a2;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+.logo {
+  display: grid;
+  justify-content: center;
+  margin-top: 3%;
+  justify-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ordem {
+  width: 100px;
+  filter: invert(1);
+}
+h1 {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-weight: normal;
+}
+h2 {
+  text-align: center;
+  color: #ffffff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+h4 {
+  font: bold 15px "Itim", sans-serif;
+  color: #656565;
+  text-align: left;
+}
+.h4Sanity {
+  font: bold 15px "Itim", sans-serif;
+  color: #656565;
+  text-align: left;
+  margin-top: 10%;
+}
+.divInputs {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+input {
+  border: none;
+  border-bottom: 2px solid #a2a2a2;
+  padding: 3px 7px;
+  margin-top: 18px;
+  margin-bottom: 10px;
+  font: bold 13px "Itim", sans-serif;
+  background-color: transparent;
+  color: white;
+  outline: 0;
+}
+.input {
+  border: none;
+  border-bottom: 2px solid #a2a2a2;
+  padding: 3px 7px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font: 18px "Itim", sans-serif;
+  background-color: transparent;
+  color: white;
+  outline: 0;
+}
+.character {
+  grid-area: character;
+  width: 420px;
+}
+.characterHeader {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+.characterPhoto {
+  border: solid;
+  border-width: 1px;
+  border-color: #a2a2a2;
+  border-radius: 50%;
+  transition: 2s;
+  width: 140px;
+}
+.characterPhoto:hover {
+  background-color: grey;
+}
+.dice {
+  width: 110px;
+  height: 130px;
+  cursor: pointer;
+  transition: 1s;
+}
+.diceAppear {
+  height: 35px;
+  transition: 2s;
+}
+.dice:hover {
+  transform: scale(1.1) rotate(120deg);
+}
+.rollDices {
+  float: right;
+  position: sticky;
+  display: grid;
+  margin-right: 1%;
+  grid-template-areas:
+    "D12"
+    "D10"
+    "D8"
+    "D6"
+    "D4";
+  width: max-content;
+  top: 5%;
+  bottom: 15%;
+  text-align: center;
+  font: 10px "Itim", sans-serif;
+  filter: grayscale(1);
+}
+.rDices {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 30px;
+  filter: grayscale(1);
+}
+.rDices .tooltiptext12 {
+  visibility: hidden;
+  width: 40px;
+  background-color: #0000009c;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  margin-top: -14px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+.rDices .tooltiptext10 {
+  visibility: hidden;
+  width: 40px;
+  background-color: #0000009c;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  margin-top: -14px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+.rDices .tooltiptext8 {
+  visibility: hidden;
+  width: 40px;
+  background-color: #0000009c;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  margin-top: -14px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+.rDices .tooltiptext6 {
+  visibility: hidden;
+  width: 40px;
+  background-color: #0000009c;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  margin-top: -14px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+.rDices .tooltiptext4 {
+  visibility: hidden;
+  width: 40px;
+  background-color: #0000009c;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  margin-top: -14px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+.D12 {
+  max-width: 50px;
+  cursor: pointer;
+  transition: 2s;
+}
+.dice12 {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.dice12:hover .tooltiptext12 {
+  visibility: visible;
+}
+.dice12:hover .D12 {
+  transform: scale(1.2) rotate(180deg);
+}
+.D10 {
+  max-width: 50px;
+  cursor: pointer;
+  transition: 2s;
+}
+.dice10 {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.dice10:hover .tooltiptext10 {
+  visibility: visible;
+}
+.dice10:hover .D10 {
+  transform: scale(1.2) rotate(180deg);
+}
+.D8 {
+  max-width: 50px;
+  cursor: pointer;
+  transition: 2s;
+}
+.dice8 {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.dice8:hover .tooltiptext8 {
+  visibility: visible;
+}
+.dice8:hover .D8 {
+  transform: scale(1.2) rotate(180deg);
+}
+.D6 {
+  max-width: 50px;
+  cursor: pointer;
+  transition: 2s;
+}
+.dice6 {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.dice6:hover .tooltiptext6 {
+  visibility: visible;
+}
+.dice6:hover .D6 {
+  transform: scale(1.2) rotate(180deg);
+}
+.D4 {
+  max-width: 50px;
+  cursor: pointer;
+  transition: 2s;
+}
+.dice4 {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.dice4:hover .tooltiptext4 {
+  visibility: visible;
+}
+.dice4:hover .D4 {
+  transform: scale(1.2) rotate(180deg);
+}
+.fundoEscuro {
+  position: fixed;
+  display: none;
+  background-color: #000000a3;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  z-index: 2;
+}
+.resultado {
+  position: absolute;
+  display: none;
+  color: white;
+  animation: fadein 2s;
+  text-align: center;
+  margin-left: 41%;
+  margin-top: 15%;
+  margin-bottom: 15%;
+  width: 22%;
+  padding: 20px;
+  z-index: 4;
+  background-color: #0a0b0c;
+  border: 1px solid;
+  border-color: #ccc9c9;
+  transition: 2s;
+  align-content: center;
+  justify-items: center;
+}
+.number {
+  display: none;
+  font: bold 30px "Itim", sans-serif;
+  animation: fadein 0.5s;
+}
+.result {
+  display: none;
+  font: 25px "Itim", sans-serif;
+}
+.bars {
+  padding-top: 12px;
+}
+.bar {
+  width: 100%;
+  background-color: #632122;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  transition: width 2s;
+  border: 0.1px solid;
+  border-color: transparent;
+  border-radius: 4px;
+}
+.bars .checkboxs {
+  text-align: center;
+}
+input[type="checkbox"] {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+input[type="checkbox"] + label:before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 0;
+  bottom: 2px;
+  border: solid 0.1px #a2a2a2;
+  vertical-align: bottom;
+  border-radius: 1px;
+  z-index: -1;
+}
+input[type="checkbox"]:checked + label:after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  bottom: 6px;
+  width: 2px;
+  height: 6px;
+  border: solid rgb(255, 255, 255);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+input[type="checkbox"] + label {
+  position: relative;
+  cursor: pointer;
+  padding-left: 25px;
+  font:14px "Itim", sans-serif;
+  z-index: -1;
+}
+.bars .checkboxs label {
+  margin-right: 10px;
+}
+.lifeBar {
+  width: 0%;
+  height: 25px;
+  background-color: #640c0c;
+  transition: width 2s;
+  border-radius: 4px;
+}
+.barcount {
+  font-size: 15px;
+  width: 6%;
+  height: 100%;
+  border: none;
+  margin: 0;
+}
+.modal {
+  position: absolute;
+  margin-top: -25px;
+  margin-left: 25px;
+  transition: width 2s;
+}
+.with-input .modal-content {
+  width: 40%;
+  transition: width 2s;
+}
+.formModal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: width 2s;
+}
+.modal-content input {
+  text-align: center;
+  margin: 0;
+  border: none;
+}
+.submitLife {
+  color: #656565;
+  border: 1px solid white;
+
+}
+.sanity {
+  margin-top: 5px;
+}
+.contentSanityBar {
+  align-self: end;
+  width: 100%;
+  background-color: #213363;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  border: 0.1px solid;
+  border-color: transparent;
+  border-radius: 4px;
+}
+.sanityDice {
+  display: block;
+    cursor: pointer;
+    margin-left: 90%;
+    width: 35px;
+    transition: 1s;
+}
+.sanityDice:hover {
+  transform: rotate(175deg);
+}
+.sanityBar {
+  width: 0%;
+  height: 25px;
+  background-color: #011550;
+  transition: width 2s;
+  border-radius: 4px;
+}
+.ocultismo {
+  margin-top: 4%;
+}
+.contentOcultBar {
+  align-self: end;
+  width: 100%;
+  background-color: #402164;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  border: 0.1px solid;
+  border-color: transparent;
+  border-radius: 4px;
+}
+.ocultBar {
+  width: 0%;
+  height: 25px;
+  background-color: #300151;
+  transition: width 2s;
+  border-radius: 4px;
+}
+.extra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding: 1px 15px;
+  text-align: center;
+  font: bold 17px "Itim", sans-serif;
+}
+.extra .damage {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+}
+.extra .body {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+}
+.extra .exposure {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+}
+.extra input {
+  width: 50%;
+  text-align: center;
+  font-size: 18px;
+  align-self: center;
+  border: 2px solid #a2a2a2;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.ocultBar > .submitLife:hover{
+    border: 1px solid white;
+}
+.rolagemSanity{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  font: 16px "Itim", sans-serif;
+}
+
+#increment{
+  width: 20px;
+  height: 20px;
+  border: 2px solid #a2a2a2;
+  border-radius: 5px;
+  margin: 0;
+  margin-left: 2px;
+  text-align: center;
+  font-size: 15px;
+}
+ul{
+  display: block;
+  background-color: rgb(23, 23, 23);
+  color: grey;
+  width: 80px;
+  height: 30px;
+  border-bottom-left-radius: 10px;
+  z-index: 5;
+  font: 22px "Itim", sans-serif;
+  cursor: pointer;
+}
+ul:hover > .lista{
+  display: block;
+  z-index: 7;
+  animation: fadein .3s;
+}
+.lista{
+  display: none;
+  list-style: none;
+  border-bottom-left-radius: 30px;
+  margin-top: 1px;
+  background-color: rgb(23, 23, 23);
+  font: 16px "Itim", sans-serif;
+  z-index: 7;
+
+}
+.lista > img{
+  z-index: 7;
+}
