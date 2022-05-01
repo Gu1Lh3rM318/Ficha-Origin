@@ -25,9 +25,8 @@
       <p id='result' class='result'></p>
     </div>
     <div class='logo'><img class='ordem' src='ordem.png'>
-      <h1>Ficha Do Jogador</h1>
+      <h1>Ficha Do Investigador</h1>
     </div>
-    
     <div class='container'>
       <div class='details border'>
         <div class="rollDices">
@@ -52,22 +51,26 @@
             </div></li></div>
           </ul>
           </div>
-        </div><h2>DETALHES DA FICHA</h2> 
-        <hr>
+        </div><h2>DETALHES PESSOAIS</h2> 
+        
         <div class='divInputs'>
-          <h4>Jogador</h4>
+          <h4>Nome</h4>
           <input class='input' id='player'></input>
-        <h4>Personagem</h4>
-        <input class='input' id='personagem'></input>
-      <h4>Ocupacao</h4>
-      <input class='input' id='ocupacao'></input>
-    <h4>Genero</h4>
-    <input class='input' id='genero'></input>
-  <h4>Idade</h4>
-  <input class='input' type='number' id='idade'></input>
+          <h4>Jogador</h4>
+          <input class='input' id='personagem'></input>
+          <h4>Ocupação</h4>
+          <input class='input' id='ocupacao'></input>
+          <h4>Gênero</h4>
+          <input class='input' id='genero'></input>
+          <h4>Idade</h4>
+          <input class='input' type='number' id='idade'></input>
+          <h4>Local de Nascimento</h4>
+          <input class='input' id='birthPlace'></input>
+          <h4>Local de Residência</h4>
+          <input class='input' id='residencePlace'></input>
 </div>
 <div class="divLS">
-    <button type="submit" onclick="salvar()" class="save">Guardar Informacoes</button>
+    <button type="submit" onclick="salvar()" class="save">Guardar Informações</button>
     <button type="submit" id="clear" onclick="localClear()" class="save">Limpar Ficha</button>
     </div>
 </div>
@@ -84,8 +87,8 @@
           <div class="modal-content">
             <form class="formModal" id="changeLife">
               <input name="current" id="lifeCurrent" min="0" placeholder='Atual' autocomplete='off'>|
-              <input name="max" id="lifeMax" min="0" placeholder='Maxima' autocomplete='off'>
-              <input type="submit" class='submitLife' onclick="saveBars()">
+              <input name="max" id="lifeMax" min="0" placeholder='Máxima' autocomplete='off'>
+              <input type="submit" class='submitLife' onclick="saveBars()" value="Enviar">
             </form>
           </div>
         </div>
@@ -98,7 +101,7 @@
         <input type="checkbox" id="injury" name="injury" value="injury">
         <label for="injury"> Inconciente</label>
         <input type="checkbox" id="dying" name="dying" value="dying">
-        <label for="dying"> Morrendo</label>
+        <label for="dying" style="margin-right: 0;"> Morrendo</label>
       </form>
     </div>
     <h4 class='h4Sanity'>Sanidade</h4>
@@ -109,15 +112,15 @@
             <div class="modal-content">
               <form class="formModal" id="changeSanity">
                 <input name="sanityCurrent" id="sanityCurrent" min="0" placeholder='Atual' autocomplete='off'>|
-                <input name="sanityMax" id="sanityMax" min="0" placeholder='Maxima' autocomplete='off'>
-                <input type="submit" class='submitLife' onclick="saveBars()">
+                <input name="sanityMax" id="sanityMax" min="0" placeholder='Máxima' autocomplete='off'>
+                <input type="submit" class='submitLife' onclick="saveBars()" value="Enviar">
               </form>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="checkboxs" style="padding-top: 10px;">
+    <div class="checkboxs">
       <input type="checkbox" id="traumatized" name="traumatized" value="traumatized">
       <label for="traumatized"> Traumatizado</label>
       <input type="checkbox" id="crazed" name="crazed" value="crazed">
@@ -136,9 +139,8 @@
             <div class="modal-content">
               <form class="formModal" id="changeOcult">
                 <input name="ocultCurrent" id="ocultCurrent" min="0" placeholder='Atual' autocomplete='off'>|
-
                 <input name="ocultMax" id="ocultMax" min="0" placeholder='Maxima' autocomplete='off'>
-                <input type="submit" class='submitLife' onclick="saveBars()">
+                <input type="submit" class='submitLife' onclick="saveBars()" value="Enviar">
               </form>
             </div>
           </div>

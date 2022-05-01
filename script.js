@@ -7,6 +7,8 @@
   var body = document.getElementById("body");
   var EP = document.getElementById("EP");
   var multiply = document.getElementById("increment");
+  var placeBirth = document.getElementById("birthPlace");
+  var placeReside = document.getElementById("residencePlace");
 
   var vidaAtual = document.getElementById("lifeCurrent");
   var vidaMaxima = document.getElementById("lifeMax");
@@ -26,6 +28,9 @@
       localStorage.dmg = damage.value;
       localStorage.bdy = body.value;
       localStorage.eP = EP.value;
+      localStorage.placeB = placeBirth.value;
+      localStorage.placeR = placeReside.value;
+
   }
 
   function carregar(){
@@ -38,6 +43,8 @@
     body.value = localStorage.bdy;
     EP.value = localStorage.eP;
     multiply.value =  localStorage.multi;
+    placeReside.value = localStorage.placeR;
+    placeBirth.value = localStorage.placeB;
   }
 
   function saveBars() {
@@ -560,6 +567,8 @@ const data = {
       ocultismoAtual.value = '';
       ocultismoMaximo.value = '';
       multiply.value = '';
+      placeReside.value ='';
+      placeBirth.value = '';
 
       salvar();
   });
