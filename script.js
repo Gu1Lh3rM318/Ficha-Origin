@@ -9,7 +9,14 @@
   var multiply = document.getElementById("increment");
   var placeBirth = document.getElementById("birthPlace");
   var placeReside = document.getElementById("residencePlace");
-
+  var addimg = document.getElementById("add-imagem");
+  let file = document.getElementById("imgadd");
+  let photo = document.getElementById("imgPhoto");
+  var resultado = document.getElementById("resultado");
+  var number = document.getElementById("number");
+  var result = document.getElementById("result");
+  var fundoEscuro = document.getElementById("fundoEscuro");
+  var dadoGirar = document.querySelector(".diceAppear");
   var vidaAtual = document.getElementById("lifeCurrent");
   var vidaMaxima = document.getElementById("lifeMax");
   var sanidadeAtual = document.getElementById("sanityCurrent");
@@ -17,7 +24,8 @@
   var ocultismoAtual = document.getElementById("ocultCurrent");
   var ocultismoMaximo = document.getElementById("ocultMax");
   //////////////////////////localstorage/////////////// 
-    
+  var reader = new FileReader();
+
   function salvar() {
       localStorage.multi = multiply.value;
       localStorage.nameP = namePlayer.value;
@@ -30,8 +38,10 @@
       localStorage.eP = EP.value;
       localStorage.placeB = placeBirth.value;
       localStorage.placeR = placeReside.value;
-
+      localStorage.imgR = reader.result
   }
+  
+
 
   function carregar(){
     namePlayer.value = data.player;
@@ -45,6 +55,7 @@
     multiply.value =  localStorage.multi;
     placeReside.value = localStorage.placeR;
     placeBirth.value = localStorage.placeB;
+    photo.src = localStorage.imgR;
   }
 
   function saveBars() {
@@ -56,9 +67,6 @@
       localStorage.ocultM = ocultismoMaximo.value;
   }
     
-
-
-  
 const data = {
     player: localStorage.nameP,
     name: localStorage.nameA,
@@ -276,11 +284,7 @@ const data = {
     }
   }
   
-  var resultado = document.getElementById("resultado");
-  var number = document.getElementById("number");
-  var result = document.getElementById("result");
-  var fundoEscuro = document.getElementById("fundoEscuro");
-  var dadoGirar = document.querySelector(".diceAppear");
+  
   
   function sound() {
     var myAudio = document.getElementById("audio");
@@ -569,6 +573,31 @@ const data = {
       multiply.value = '';
       placeReside.value ='';
       placeBirth.value = '';
-
+      photo.src = 'character.png';
       salvar();
   });
+  
+  function imgchange() {
+    addimg.style.display = "flex";
+    fundoEscuro.style.display = "block";
+  }
+  $("#closeW").click(function () {
+    addimg.style.display = "none";
+    fundoEscuro.style.display = "none";
+  })
+
+file.addEventListener('change', () => {
+  addimg.style.display = "none";
+  fundoEscuro.style.display = "none";
+  
+   reader.onload = () => {
+     photo.src = reader.result;
+     salvar()
+   };
+   reader.readAsDataURL(file.files[0])
+})
+
+fundoEscuro.addEventListener('click', () => {
+  addimg.style.display = "none";
+  fundoEscuro.style.display = "none";
+})

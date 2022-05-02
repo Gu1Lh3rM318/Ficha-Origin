@@ -15,10 +15,13 @@
        <!-- HTML DA ANIMAÇÃO MUITO LOUCA DO SEU PRELOADER! -->
        <img src="ordem.png">
     </div>
-</div>//
+</div>
 <!-- fim do preloader --> 
     <audio id='audio' src="somDado.mp3" type=".mp3" preload></audio>
     <div class='fundoEscuro' id='fundoEscuro'></div>
+    <div class='add-imagem' id="add-imagem">
+      <input type="file" name="imgadd" id="imgadd" accept="image/*">
+    </div>
     <div class='resultado' id='resultado'>
       <img class="diceAppear" src="dado.png" alt="Dado">
       <p id='number' class='number'></p>
@@ -54,6 +57,7 @@
         </div><h2>DETALHES PESSOAIS</h2> 
         
         <div class='divInputs'>
+          
           <h4>Nome</h4>
           <input class='input' id='player'></input>
           <h4>Jogador</h4>
@@ -71,12 +75,13 @@
 </div>
 <div class="divLS">
     <button type="submit" onclick="salvar()" class="save">Guardar Informações</button>
-    <button type="submit" id="clear" onclick="localClear()" class="save">Limpar Ficha</button>
+    <button type="submit" onclick="salvar()" class="save">Carregar Informações</button>
+    <button type="submit" id="clear" class="save">Limpar Ficha</button>
     </div>
 </div>
 <div class='character'>
   <div class='characterHeader'>
-    <img class="characterPhoto" src="character.png" alt="Foto">
+    <img class="characterPhoto" src="character.png" id="imgPhoto" alt="Foto" onclick="imgchange()">
     <img class="dice" src="20-sided-dice.png" alt="Dado" onclick='D20()'>
   </div>
   <div class='bars'>
