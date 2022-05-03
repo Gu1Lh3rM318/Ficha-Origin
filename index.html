@@ -10,16 +10,16 @@
 </head>
 <body>
     <!-- início do preloader -->
-  <div id="preloader">
+  <!-- <div id="preloader">
     <div class="inner">
-       <!-- HTML DA ANIMAÇÃO MUITO LOUCA DO SEU PRELOADER! -->
        <img src="ordem.png">
     </div>
-</div>
+</div> -->
 <!-- fim do preloader --> 
     <audio id='audio' src="somDado.mp3" type=".mp3" preload></audio>
     <div class='fundoEscuro' id='fundoEscuro'></div>
     <div class='add-imagem' id="add-imagem">
+      <label for="imgadd">Enviar Foto</label>
       <input type="file" name="imgadd" id="imgadd" accept="image/*">
     </div>
     <div class='resultado' id='resultado'>
@@ -28,7 +28,7 @@
       <p id='result' class='result'></p>
     </div>
     <div class='logo'><img class='ordem' src='ordem.png'>
-      <h1>Ficha Do Investigador</h1>
+      <h1>Ficha Do Personagem</h1>
     </div>
     <div class='container'>
       <div class='details border'>
@@ -54,30 +54,75 @@
             </div></li></div>
           </ul>
           </div>
-        </div><h2>DETALHES PESSOAIS</h2> 
+        </div><h2>DADOS DO AGENTE</h2> 
         
         <div class='divInputs'>
-          
           <h4>Nome</h4>
-          <input class='input' id='player'></input>
+            <input class='input' id='player'></input>
           <h4>Jogador</h4>
-          <input class='input' id='personagem'></input>
-          <h4>Ocupação</h4>
-          <input class='input' id='ocupacao'></input>
-          <h4>Gênero</h4>
-          <input class='input' id='genero'></input>
+            <input class='input' id='personagem' ></input>
+          <div style="display: flex; justify-content: space-around;">
+            <h4>Classe</h4><h4>Trilha</h4><h4>Patente</h4>
+          </div>
+            <div class="seletores" >
+              <select name="classe" id="classe">
+            <option value="Combatente">Combatente</option>
+            <option value="Especialista">Especialista</option>
+            <option value="Ocultista">Ocultista</option>
+            <option value="-" selected>-</option>
+              </select>
+              <select name="trilha" id="trilha">
+            <option value="Artista ">Artista</option>
+            <option value="Atirador de Elite">Atirador de Elite</option>
+            <option value="Comandante">Comandante</option>
+            <option value="de Combate">de Combate</option>
+            <option value="Duelista">Duelista</option>
+            <option value="Infiltrador">Infiltrador</option>
+            <option value="Intuitivo">Intuitivo</option>
+            <option value="Sagaz">Sagaz</option>
+            <option value="Socorrista">Socorrista</option>
+            <option value="-" selected>-</option>
+              </select>
+              <select name="patente" id="patente" style="width: 98px;">
+            <option value="Recruta">Recruta</option>
+            <option value="Agente">Agente</option>
+            <option value="Operador">Operador</option>
+            <option value="Veterano">Veterano</option>
+            <option value="Elite">Elite</option>
+            <option value="-" selected>-</option>
+              </select></div>
+          <h4>Origem</h4>
+          <div class="seletores">
+          <select name="origem" id="origem">     
+              <option value="Acadêmico">Acadêmico</option>
+              <option value="Atleta">Atleta</option>
+              <option value="Exorcista">Exorcista</option>
+              <option value="Mercenário">Mercenário</option>
+              <option value="Profissional da Saúde">Profissional da Saúde</option>
+              <option value="T.I">T.I</option>
+              <option value="-" selected>-</option>
+          </select>
+          </div>
+          <h4>Afinidade</h4>
+          <div class="seletores">
+            <select name="afinidade" id="afinidade">
+              <option value="Conhecimento">Conhecimento</option>
+              <option value="Energia">Energia</option>
+              <option value="Morte">Morte</option>
+              <option value="Sangue">Sangue</option>
+              <option value="-" selected>-</option>
+            </select>
+          </div>
           <h4>Idade</h4>
-          <input class='input' type='number' id='idade'></input>
-          <h4>Local de Nascimento</h4>
-          <input class='input' id='birthPlace'></input>
+          <input class='input' type='number' id='idade'></input>        
           <h4>Local de Residência</h4>
           <input class='input' id='residencePlace'></input>
-</div>
-<div class="divLS">
-    <button type="submit" onclick="salvar()" class="save">Guardar Informações</button>
-    <button type="submit" onclick="salvar()" class="save">Carregar Informações</button>
-    <button type="submit" id="clear" class="save">Limpar Ficha</button>
-    </div>
+        </div>
+        <div class="divLS">
+      <button type="submit" onclick="salvar()" class="save">Guardar Informações</button>
+      <button type="submit" onclick="salvar()" class="save">Carregar Informações</button>
+      <button type="submit" id="clear" class="save">Limpar Ficha</button>
+      </div>
 </div>
 <div class='character'>
   <div class='characterHeader'>
@@ -130,14 +175,13 @@
       <label for="traumatized"> Traumatizado</label>
       <input type="checkbox" id="crazed" name="crazed" value="crazed">
       <label for="crazed"> Enlouquecido</label>
-      
     </div>
     <div class="rolagemSanity">
       <p>Multiplicador: <input type="text" name="increment" id="increment"></p>
       <p><img class="sanityDice" src="20-sided-dice.png" onclick="sanityDice()" alt="Dado"></p>
     </div>
     <div class="ocultismo">
-      <h4>Ocultismo</h4>
+      <h4>P E</h4>
       <div class="contentOcultBar">
         <div class="ocultBar">
           <div id="ocultModal" class="modal with-input">
@@ -155,8 +199,8 @@
   </div>
   <div class="extra">
     <div class="damage">
-      <p>Dano extra</p>
-      <input type="number" name="damage" id="damage">
+      <p>Dano Extra</p>
+        <input type="number" name="damage" id="damage">
     </div>
     <div class="body">
       <p>Corpo</p>
@@ -164,7 +208,7 @@
     </div>
     <div class="exposure">
       <p>Exp. P.</p>
-      <input type="number" name="EP" id="EP">
+     <input type="text" name="EP" id="EP">
     </div>
   </div>
 </div>

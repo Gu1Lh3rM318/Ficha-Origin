@@ -176,7 +176,7 @@ body {
 .details {
   grid-area: details;
   height: auto;
-  width: 400px;
+  width: 450px;
   font-family:"type writer";
 }
 .divLS{
@@ -689,6 +689,10 @@ input[type="checkbox"] + label {
   flex-direction: column;
   width: 100px;
 }
+#damage{
+  margin-left: 1px;
+  margin-right: 1px;
+}
 .extra .body {
   display: flex;
   flex-direction: column;
@@ -701,6 +705,7 @@ input[type="checkbox"] + label {
 }
 .extra input {
   width: 50%;
+  height: 30px;
   text-align: center;
   font-size: 18px;
   align-self: center;
@@ -783,16 +788,44 @@ form{
   margin-top: 15%;
   margin-bottom: 15%;
   padding: 20px;
+  width: 20%;
   z-index: 4;
   background-color: #0a0b0c;
-  border: 1px solid;
-  border-color: #ccc9c9;
+  border: 1px solid #ccc9c9;
   transition: 2s;
 
 }
 #imgadd{
+  display: none;
+}
+.add-imagem > label {
   cursor: pointer;
   background-color: #0a0b0c;
   font-family:"type writer";
   font-size: 15px;
+}
+select{
+  width: fit-content;
+  height: 30px;
+  background: transparent;
+  margin-left: 1%;
+  border:1px solid #1d1d1d ;
+  outline: none;
+  cursor: pointer;
+  color: rgba(153,153,153);
+  font: 15px "type writer" ;
+}
+.seletores{
+  margin-top: 3px;
+  margin-bottom: 15px;
+  width: 390px;
+}
+option {
+  background-color: #0a0b0c;
+  color:rgb(153, 153, 153);
+  white-space:pre-line;
+}
+option:hover{
+  background-color: rgb(153, 153, 153);
+  color: #0a0b0c;
 }

@@ -1,6 +1,5 @@
   var namePlayer = document.getElementById("player");
   var nameActor = document.getElementById("personagem");
-  var ocupacao = document.getElementById("ocupacao");
   var genero = document.getElementById("genero");
   var birthDate = document.getElementById("idade");
   var damage = document.getElementById("damage");
@@ -30,7 +29,6 @@
       localStorage.multi = multiply.value;
       localStorage.nameP = namePlayer.value;
       localStorage.nameA = nameActor.value;
-      localStorage.occu = ocupacao.value;
       localStorage.gen = genero.value;
       localStorage.bDate = birthDate.value;
       localStorage.dmg = damage.value;
@@ -46,7 +44,6 @@
   function carregar(){
     namePlayer.value = data.player;
     nameActor.value = data.name;
-    ocupacao.value = data.occupation;
     genero.value = data.sex;
     birthDate.value = data.age; 
     damage.value = localStorage.dmg;
@@ -70,7 +67,6 @@
 const data = {
     player: localStorage.nameP,
     name: localStorage.nameA,
-    occupation: localStorage.occu,
     sex: localStorage.gen,
     age: localStorage.bDate,
   
@@ -558,7 +554,6 @@ const data = {
       localStorage.clear();
       namePlayer.value='';
       nameActor.value='';
-      ocupacao.value='';
       genero.value='';
       birthDate.value='';
       damage.value='';
@@ -578,14 +573,10 @@ const data = {
   });
   
   function imgchange() {
-    addimg.style.display = "flex";
+    addimg.style.display = "block";
     fundoEscuro.style.display = "block";
   }
-  $("#closeW").click(function () {
-    addimg.style.display = "none";
-    fundoEscuro.style.display = "none";
-  })
-
+  
 file.addEventListener('change', () => {
   addimg.style.display = "none";
   fundoEscuro.style.display = "none";
@@ -597,7 +588,24 @@ file.addEventListener('change', () => {
    reader.readAsDataURL(file.files[0])
 })
 
-fundoEscuro.addEventListener('click', () => {
+  fundoEscuro.addEventListener('click', () => {
   addimg.style.display = "none";
   fundoEscuro.style.display = "none";
-})
+  })
+
+
+  var verifyInt = /\d+/g;
+
+  $("#EP").blur(function() {
+  if ($("#EP").val().match(verifyInt) != null) {
+    EP.value = EP.value + "%";  
+    }
+  }) 
+  if(EP.value == ""){
+  EP.value = "%"
+  }
+
+  $("#EP").focus(function () {
+    EP.value = ""
+  })
+  
