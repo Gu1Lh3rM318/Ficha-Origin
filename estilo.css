@@ -15,104 +15,42 @@
   .container {
     width: 75%;
   }
-  .resultado {
-    width: 75%;
-    margin-left: 45%;
-    margin-top: 20%;
-    margin-bottom: 15%;
-  }
-  .rollDices {
-    width: 75%;
-  }
-  .logo {
-    width: 75%;
-  }
+
 }
 
 @media only screen and (min-width: 450px) {
   .container {
     width: 75%;
   }
-  .resultado {
-    width: 75%;
-    margin-left: 60%;
-    margin-top: 20%;
-    margin-bottom: 15%;
-  }
-  .rollDices {
-    width: 75%;
-  }
-  .logo {
-    width: 75%;
-  }
 }
 
 @media only screen and (min-width: 650px) {
   .container {
-    width: 65%;
-  }
-  .resultado {
-    width: 65%;
-    margin-left: 60%;
-    margin-top: 20%;
-    margin-bottom: 15%;
-  }
-  .rollDices {
-    width: 65%;
-  }
-  .logo {
-    width: 65%;
+    width: 68%;
   }
 }
 
 @media only screen and (min-width: 1000px) {
   .container {
-    width: 65%;
-  }
-  .resultado {
-    width: 65%;
-  }
-  .rollDices {
-    width: 65%;
-  }
-  .logo {
-    width: 65%;
+      width: 65%;
   }
 }
 
 @media only screen and (min-width: 1342px) {
   .container {
-    width: 62%;
-  }
-  .resultado {
-    width: 62%;
-  }
-  .rollDices {
-    width: 62%;
+      width: 60%;
   }
 }
 
 @media only screen and (min-width: 1500px) {
   .container {
-    width: 50%;
-  }
-  .resultado {
-    width: 50%;
-  }
-  .rollDices {
-    width: 50%;
+      width: 50%;
   }
 }
 
 @media only screen and (min-width: 1920px) {
   .container {
-    width: 40%;
-  }
-  .resultado {
-    width: 40%;
-  }
-  .rollDices {
-    width: 40%;
+      width: 40%;
   }
 }
 
@@ -149,15 +87,11 @@
     opacity: 0.3;
   } /* Webkit */
 }
-html {
-  height: 100%;
-  width: 100%;
-}
+
 body {
   background-color: #0a0b0c;
   color: white;
   font-family:"type writer";
-  margin-top: -20px;
   animation: fadein 1s;
 }
 .container {
@@ -170,14 +104,11 @@ body {
   grid-gap: 30px;
   margin-left: auto;
   margin-right: auto;
-  justify-content: center;
-  align-items: center;
+  width: 65%;
 }
 .details {
   grid-area: details;
   height: auto;
-  width: 450px;
-  font-family:"type writer";
 }
 .divLS{
     display: flex;
@@ -234,6 +165,10 @@ h2 {
   padding-bottom: 10px;
   font: 20px "type writer";
   cursor: default;
+}
+h3 {
+  text-align: center;
+  font-weight: normal;
 }
 h4 {
   font: 17px "type writer";
@@ -294,7 +229,6 @@ input {
   max-height: 130px;
   height: 130px;
   width: 130px;
-  margin-right: 12%;
 }
 .characterPhoto:hover {
   background-color: grey;
@@ -303,18 +237,17 @@ input {
   height: 90px;
   margin-top: 6%;
   cursor: pointer;
-  transition: 1s;
+  transition: .2s ease-in;
 }
 .diceAppear {
   height: 35px;
   transition: 2s;
 }
 .dice:hover {
-  transform: scale(1.1) rotate(120deg);
+  transform: rotate(45deg);
 }
 .rollDices {
   float: right;
-  position: sticky;
   display: grid;
   margin-right: 1%;
   grid-template-areas:
@@ -324,7 +257,7 @@ input {
     "D6"
     "D4";
   width: max-content;
-  top: 5%;
+  top: 1px;
   bottom: 15%;
   text-align: center;
   font: 10px "type writer";
@@ -496,7 +429,7 @@ input {
   z-index: 2;
 }
 .resultado {
-  position: absolute;
+  position: fixed;
   display: none;
   color: white;
   animation: fadein 2s;
@@ -505,6 +438,7 @@ input {
   margin-top: 15%;
   margin-bottom: 15%;
   width: 22%;
+  top:10%;
   padding: 20px;
   z-index: 4;
   background-color: #0a0b0c;
@@ -537,6 +471,7 @@ input {
   border-radius: 4px;
 }
 .bars .checkboxs {
+  display: contents;
   text-align: center;
 }
 input[type="checkbox"] {
@@ -599,8 +534,6 @@ input[type="checkbox"] + label {
 }
 .modal {
   position: absolute;
-  margin-top: -25px;
-  margin-left: 25px;
   transition: width 2s;
 }
 .with-input .modal-content {
@@ -612,11 +545,15 @@ input[type="checkbox"] + label {
   flex-direction: row;
   align-items: center;
   transition: width 2s;
+  margin-left: 20px;
 }
 .modal-content input {
   text-align: center;
   margin: 0;
   border: none;
+  width: 130px;
+  font-weight: bold;
+  font-size: 15px;
 }
 .submitLife {
   color: #dbdbdb;
@@ -642,11 +579,11 @@ input[type="checkbox"] + label {
     cursor: pointer;
     margin-left: 70%;
     height: 50px;
-    transition: 1s;
+    transition: .8s;
     transform: rotate(15deg);
 }
 .sanityDice:hover {
-  transform: rotate(175deg);
+  transform: rotate(345deg);
 }
 .sanityBar {
   width: 0%;
@@ -709,7 +646,7 @@ input[type="checkbox"] + label {
   text-align: center;
   font-size: 18px;
   align-self: center;
-  border: 2px solid #a2a2a2;
+  border: 0.1px solid #1d1d1d;
   border-radius: 5px;
   margin-top: 5px;
   color: rgb(153, 153, 153);
@@ -734,7 +671,7 @@ input[type="checkbox"] + label {
 #increment{
   width: 20px;
   height: 20px;
-  border: 2px solid #a2a2a2;
+  border: 0.1px solid #1d1d1d;
   border-radius: 5px;
   margin: 0;
   margin-left: 2px;
@@ -749,13 +686,9 @@ ul{
   margin-right: -4px;
   width: 80px;
   height: 30px;
-  border-bottom-left-radius: 10px;
   z-index: 5;
   font: 22px "type writer";
   cursor: pointer;
-}
-ul:hover{
-  border-bottom-left-radius: 0px;
 }
 ul:hover > .lista{
   display: block;
@@ -765,7 +698,6 @@ ul:hover > .lista{
 .lista{
   display: none;
   list-style: none;
-  border-bottom-left-radius: 30px;
   margin-top: 1px;
   background-color: rgb(23, 23, 23);
   font: 16px "type writer";
@@ -779,14 +711,14 @@ form{
   display: flex;
 }
 .add-imagem{
-  position: absolute;
+  position: fixed;
   display: none;
   color: white;
   animation: fadein 2s;
   text-align: center;
   margin-left: 39%;
-  margin-top: 15%;
   margin-bottom: 15%;
+  top: 40%;
   padding: 20px;
   width: 20%;
   z-index: 4;
@@ -828,4 +760,58 @@ option {
 option:hover{
   background-color: rgb(153, 153, 153);
   color: #0a0b0c;
+}
+.attributes {
+  grid-area: attributes;
+}
+h2.grid-title {
+  margin-top: 10px;
+  padding: 10px;
+  text-align: center;
+}
+hr {
+  border-top: 1px solid #1d1d1d;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+.attributes .attributesList {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 10px;
+}
+.attribute a {
+  cursor: pointer;
+}
+.attributeDice:hover {
+  transform: rotate(360deg);
+}
+.attribute .attributeDice {
+  display: block;
+  height: 55px;
+  margin-right: 0;
+  transition: .7s ease-in-out;
+}
+.attributes .attribute {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  width: 85px;
+}
+.attribute input {
+  width: 40%;
+  text-align: center;
+  margin-top: 5px;
+  font-size: 18px;
+  align-self: center;
+  border: 0.1px solid #1d1d1d;
+  border-radius: 5px;
+}
+.expertise {
+  grid-area: expertise;
+
 }
