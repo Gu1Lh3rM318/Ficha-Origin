@@ -622,7 +622,6 @@ $(window).scroll(function(e){
 });
 $("#t").click(function () {
   if($(".checkboxs").css({'display':'contents'})){
-    console.log('sim');
     $(".checkboxs").css({'display':'none'})
   }
 })

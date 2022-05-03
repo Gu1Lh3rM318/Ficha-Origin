@@ -11,48 +11,7 @@
   font-weight: normal;
   font-style: normal;
 }
-@media only screen and (min-width: 375px) {
-  .container {
-    width: 75%;
-  }
 
-}
-
-@media only screen and (min-width: 450px) {
-  .container {
-    width: 75%;
-  }
-}
-
-@media only screen and (min-width: 650px) {
-  .container {
-    width: 68%;
-  }
-}
-
-@media only screen and (min-width: 1000px) {
-  .container {
-      width: 65%;
-  }
-}
-
-@media only screen and (min-width: 1342px) {
-  .container {
-      width: 60%;
-  }
-}
-
-@media only screen and (min-width: 1500px) {
-  .container {
-      width: 50%;
-  }
-}
-
-@media only screen and (min-width: 1920px) {
-  .container {
-      width: 40%;
-  }
-}
 
 @keyframes fadein {
   from {
@@ -104,17 +63,19 @@ body {
   grid-gap: 30px;
   margin-left: auto;
   margin-right: auto;
-  width: 65%;
+  width: 70%;
 }
 .details {
   grid-area: details;
   height: auto;
+  max-width: 390px;
 }
 .divLS{
     display: flex;
     text-align: center;
     flex-direction: row;
     justify-content: center;
+    filter: drop-shadow(1px 1px 1px rgb(9, 9, 9));
 }
 .save{
     padding: 10px;
@@ -136,6 +97,7 @@ body {
   border-width: 0.1px;
   border-color: #1d1d1d;
   border-radius: 3px;
+  filter: drop-shadow(1px 1px 6px rgb(2, 2, 2));
 }
 
 .logo {
@@ -145,6 +107,7 @@ body {
   justify-items: center;
   margin-left: auto;
   margin-right: auto;
+  filter: drop-shadow(1px 1px 6px rgb(2, 2, 2));
 }
 .ordem {
   width: 100px;
@@ -156,9 +119,10 @@ h1 {
   margin-bottom: 30px;
   font-weight: normal;
   cursor: default;
+  filter: drop-shadow(1px 1px 6px rgb(2, 2, 2));
 }
 h2 {
-  text-align: left;
+  text-align: center;
   color: #ffffff;
   padding-top: 10px;
   padding-left: 20px;
@@ -175,12 +139,14 @@ h4 {
   color: #ffffff;
   text-align: left;
   cursor: default;
+  filter: drop-shadow(1px 1px 6px rgb(2, 2, 2));
 }
 .h4Sanity {
   font: 15px "type writer";
   color: #ffffff;
   text-align: left;
   margin-top: 10%;
+  filter: drop-shadow(1px 1px 6px rgb(2, 2, 2));
 }
 .divInputs {
   display: flex;
@@ -197,6 +163,12 @@ input {
   background-color: transparent;
   color: white;
   outline: 0;
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .input {
   border: none;
@@ -225,23 +197,65 @@ input {
   border-color: #464646;
   border-radius: 50%;
   transition: 2s;
-  max-width: 130px;
-  max-height: 130px;
-  height: 130px;
-  width: 130px;
+  max-width: 200px;
+  filter: drop-shadow(1px 1px 6px rgb(2, 2, 2));
 }
 .characterPhoto:hover {
   background-color: grey;
+}
+@media only screen and (min-width: 375px) {
+  .container {
+    width: 75%;
+  }
+
+}
+
+@media only screen and (min-width: 450px) {
+  .container {
+    width: 75%;
+  }
+}
+
+@media only screen and (min-width: 650px) {
+  .container {
+    width: 72%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .container {
+      width: 70%;
+  }
+}
+
+@media only screen and (min-width: 1342px) {
+  .container {
+      width: 62%;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .container {
+      width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .container {
+      width: 40%;
+  }
 }
 .dice {
   height: 90px;
   margin-top: 6%;
   cursor: pointer;
   transition: .2s ease-in;
+  filter: drop-shadow(1px 1px 6px rgb(2, 2, 2));
 }
 .diceAppear {
   height: 35px;
   transition: 2s;
+  filter: drop-shadow(1px 1px 6px rgb(2, 2, 2));
 }
 .dice:hover {
   transform: rotate(45deg);
@@ -262,6 +276,7 @@ input {
   text-align: center;
   font: 10px "type writer";
   filter: grayscale(1);
+  filter: drop-shadow(1px 1px 1px rgb(19, 19, 19));
 }
 .rDices {
   display: flex;
@@ -447,18 +462,22 @@ input {
   transition: 2s;
   align-content: center;
   justify-items: center;
+  filter: drop-shadow(1px 1px 6px rgb(2, 2, 2));
 }
 .number {
   display: none;
   font: bold 30px "type writer";
   animation: fadein 0.5s;
+  filter: drop-shadow(1px 1px 6px rgb(2, 2, 2));
 }
 .result {
   display: none;
   font: 25px "type writer";
+  filter: drop-shadow(1px 1px 6px rgb(2, 2, 2));
 }
 .bars {
   padding-top: 12px;
+  filter: drop-shadow(1px 1px 6px rgb(2, 2, 2));
 }
 .bar {
   width: 100%;
@@ -466,9 +485,7 @@ input {
   margin-bottom: 10px;
   margin-top: 5px;
   transition: width 2s;
-  border: 0.1px solid;
-  border-color: transparent;
-  border-radius: 4px;
+  height: 25px;
 }
 .bars .checkboxs {
   display: contents;
@@ -523,7 +540,6 @@ input[type="checkbox"] + label {
   height: 25px;
   background-color: #640c0c;
   transition: width 2s;
-  border-radius: 4px;
 }
 .barcount {
   font-size: 15px;
@@ -557,7 +573,6 @@ input[type="checkbox"] + label {
 }
 .submitLife {
   color: #dbdbdb;
-  border: 1px solid white;
   cursor: pointer;
 }
 
@@ -570,9 +585,6 @@ input[type="checkbox"] + label {
   background-color: #213363;
   margin-bottom: 10px;
   margin-top: 5px;
-  border: 0.1px solid;
-  border-color: transparent;
-  border-radius: 4px;
 }
 .sanityDice {
   display: block;
@@ -581,6 +593,7 @@ input[type="checkbox"] + label {
     height: 50px;
     transition: .8s;
     transform: rotate(15deg);
+    filter: drop-shadow(1px 1px 6px rgb(2, 2, 2));
 }
 .sanityDice:hover {
   transform: rotate(345deg);
@@ -590,7 +603,6 @@ input[type="checkbox"] + label {
   height: 25px;
   background-color: #011550;
   transition: width 2s;
-  border-radius: 4px;
 }
 .ocultismo {
   margin-top: 4%;
@@ -601,16 +613,12 @@ input[type="checkbox"] + label {
   background-color: #402164;
   margin-bottom: 10px;
   margin-top: 5px;
-  border: 0.1px solid;
-  border-color: transparent;
-  border-radius: 4px;
 }
 .ocultBar {
   width: 0%;
   height: 25px;
   background-color: #300151;
   transition: width 2s;
-  border-radius: 4px;
 }
 .extra {
   display: flex;
@@ -620,6 +628,7 @@ input[type="checkbox"] + label {
   padding: 1px 15px;
   text-align: center;
   font: 17px "type writer";
+  filter: drop-shadow(1px 1px 6px rgb(2, 2, 2));
 }
 .extra .damage {
   display: flex;
@@ -740,7 +749,6 @@ select{
   width: fit-content;
   height: 30px;
   background: transparent;
-  margin-left: 1%;
   border:1px solid #1d1d1d ;
   outline: none;
   cursor: pointer;
@@ -750,7 +758,7 @@ select{
 .seletores{
   margin-top: 3px;
   margin-bottom: 15px;
-  width: 390px;
+  width: 375px;
 }
 option {
   background-color: #0a0b0c;
@@ -780,8 +788,8 @@ hr {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 25px;
+  margin-right: 25px;
   margin-bottom: 10px;
 }
 .attribute a {
