@@ -1,16 +1,3 @@
-var namePlayer = document.getElementById("player");
-var nameActor = document.getElementById("personagem");
-var birthDate = document.getElementById("idade");
-var sClasse = document.getElementById("classe");
-var sTril = document.getElementById("trilha");
-var sPat = document.getElementById("patente");
-var sOri = document.getElementById("origem");
-var sAfin = document.getElementById("afinidade");
-var damage = document.getElementById("damage");
-var body = document.getElementById("body");
-var EP = document.getElementById("EP");
-var multiply = document.getElementById("increment");
-var placeReside = document.getElementById("residencePlace");
 var addimg = document.getElementById("add-imagem");
 let file = document.getElementById("imgadd");
 let photo = document.getElementById("imgPhoto");
@@ -18,63 +5,82 @@ var resultado = document.getElementById("resultado");
 var number = document.getElementById("number");
 var result = document.getElementById("result");
 var fundoEscuro = document.getElementById("fundoEscuro");
-var dadoGirar = document.querySelector(".diceAppear");
-var vidaAtual = document.getElementById("lifeCurrent");
-var vidaMaxima = document.getElementById("lifeMax");
-var sanidadeAtual = document.getElementById("sanityCurrent");
-var sanidadeMaxima = document.getElementById("sanityMax");
-var ocultismoAtual = document.getElementById("ocultCurrent");
-var ocultismoMaximo = document.getElementById("ocultMax");
+var EP = document.getElementById("EP");
 //////////////////////////localstorage///////////////
 var reader = new FileReader();
 
 function salvar() {
-  localStorage.multi = multiply.value;
-  localStorage.nameP = namePlayer.value;
-  localStorage.nameA = nameActor.value;
-  localStorage.bDate = birthDate.value;
-  localStorage.dmg = damage.value;
-  localStorage.bdy = body.value;
+  localStorage.multi = $("#increment").val();
+  localStorage.nameP = $("#player").val();
+  localStorage.nameA = $("#personagem").val();
+  localStorage.bDate = $("#idade").val();
+  localStorage.dmg = $("#damage").val();
+  localStorage.bdy = $("#body").val();
   localStorage.eP = EP.value;
-  localStorage.placeR = placeReside.value;
+  localStorage.placeR = $("#residencePlace").val();
   localStorage.imgR = reader.result;
-  localStorage.sC = sClasse.value;
-  localStorage.sT = sTril.value;
-  localStorage.sP = sPat.value;
-  localStorage.sO = sOri.value;
-  localStorage.sA = sAfin.value;
+  localStorage.sC = $("#classe").val();
+  localStorage.sT = $("#trilha").val();
+  localStorage.sP = $("#patente").val();
+  localStorage.sO = $("#origem").val();
+  localStorage.sA = $("#afinidade").val();
 }
 
 function carregar() {
-  namePlayer.value = data.player;
-  nameActor.value = data.name;
-  birthDate.value = data.age;
-  damage.value = localStorage.dmg;
-  body.value = localStorage.bdy;
-  EP.value = localStorage.eP;
-  multiply.value = localStorage.multi;
-  placeReside.value = localStorage.placeR;
+  $("#player").val(localStorage.nameP);
+  $("#personagem").val(localStorage.nameA);
+  $("#idade").val(localStorage.bDate);
+  $("#damage").val(localStorage.dmg);
+  $("#body").val(localStorage.bdy);
+  EP.value =localStorage.eP;
+  $("#increment").val(localStorage.multi);
+  $("#residencePlace").val(localStorage.placeR);
   photo.src = localStorage.imgR;
-  sClasse.value = localStorage.sC;
-  sTril.value = localStorage.sT;
-  sPat.value = localStorage.sP;
-  sOri.value = localStorage.sO;
-  sAfin.value = localStorage.sA;
+  $("#classe").val(localStorage.sC);
+  $("#trilha").val(localStorage.sT);
+  $("#patente").val(localStorage.sP);
+  $("#origem").val(localStorage.sO);
+  $("#afinidade").val(localStorage.sA);
 }
 
 function saveBars() {
-  localStorage.lifeC = vidaAtual.value;
-  localStorage.lifeM = vidaMaxima.value;
-  localStorage.sanityC = sanidadeAtual.value;
-  localStorage.sanityM = sanidadeMaxima.value;
-  localStorage.ocultC = ocultismoAtual.value;
-  localStorage.ocultM = ocultismoMaximo.value;
+  localStorage.lifeC = $("#lifeCurrent").val();
+  localStorage.lifeM = $("#lifeMax").val();
+  localStorage.sanityC = $("#sanityCurrent").val();
+  localStorage.sanityM = $("#sanityMax").val();
+  localStorage.ocultC = $("#ocultCurrent").val();
+  localStorage.ocultM = $("#ocultMax").val();
 }
 
+$("#clear").click(function () {
+  localStorage.clear();
+  $("#player").val("");
+  $("#personagem").val("");
+  $("#idade").val("");
+  $("#damage").val("");
+  $("#body").val("");
+  $("#EP").val("");
+  $("#lifeCurrent").val("");
+  $("#lifeMax").val("");
+  $("#sanityCurrent").val("");
+  $("#sanityMax").val("");
+  $("#ocultCurrent").val("");
+  $("#ocultMax").val("");
+  $("#increment").val("");
+  $("#residencePlace").val("");
+  photo.src = "character.png";
+  $("#classe").val("-");
+  $("#trilha").val("-");
+  $("#patente").val("-");
+  $("#origem").val("-");
+  $("#afinidade").val();
+  salvar();
+});
+
 const data = {
-  player: localStorage.nameP,
-  name: localStorage.nameA,
-  age: localStorage.bDate,
+  player: "",
+  name: "",
+  age: "",
 
   life: {
     current: localStorage.lifeC,
@@ -126,8 +132,8 @@ const data = {
   ],
   attributes: [
     {
-      type: "Aparência",
-      amount: 13,
+      type: "Agilidade",
+      amount: 10,
     },
     {
       type: "Constituição",
@@ -206,27 +212,24 @@ const sanityModal = $("#sanityModal");
 const ocultModal = $("#ocultModal");
 ///////////////////////////life///////////////////////
 $(".lifeBar").click(function () {
-  console.log("Vida Alterada");
   lifeModal.css("display", "block");
 });
 ///////////////////////////sanity/////////////////////
 $(".sanityBar").click(function () {
-  console.log("Sanidade Alterada");
   sanityModal.css("display", "block");
 });
 ///////////////////////////ocult///////////////////////
 $(".ocultBar").click(function () {
-  console.log("Ocultismo Alterado");
   ocultModal.css("display", "block");
 });
 ///////////////////////////life///////////////////////
 $("#changeLife").submit(function (event) {
   let current = Number($("#lifeCurrent").val());
-  const max = Number($("#lifeMax").val());
+  let max = Number($("#lifeMax").val());
 
   if (current > max) {
     alert("A vida atual não pode ser maior que a maxima!");
-    current = max;
+    $("#lifeCurrent").val(max);
   }
 
   data.life.current = current;
@@ -239,7 +242,7 @@ $("#changeLife").submit(function (event) {
 ///////////////////////////life///////////////////////
 $("#changeOcult").submit(function (event) {
   let current = Number($("#ocultCurrent").val());
-  const max = Number($("#ocultMax").val());
+  let max = Number($("#ocultMax").val());
 
   if (current > max) {
     alert("O ocultismo atual não pode ser maior que a maxima!");
@@ -256,7 +259,7 @@ $("#changeOcult").submit(function (event) {
 ///////////////////////////sanity/////////////////////
 $("#changeSanity").submit(function (event) {
   let current = Number($("#sanityCurrent").val());
-  const max = Number($("#sanityMax").val());
+  let max = Number($("#sanityMax").val());
 
   if (current > max) {
     alert("A sanidade atual não pode ser maior que a maxima!");
@@ -554,30 +557,6 @@ function sanityDice() {
 ////////////////////sanityDice///////////////////////
 $(".body").ready(`${carregar()}`);
 ///////////////////////////||////////////////////////
-$("#clear").click(function () {
-  localStorage.clear();
-  namePlayer.value = "";
-  nameActor.value = "";
-  birthDate.value = "";
-  damage.value = "";
-  body.value = "";
-  EP.value = "";
-  vidaAtual.value = "";
-  vidaMaxima.value = "";
-  sanidadeAtual.value = "";
-  sanidadeMaxima.value = "";
-  ocultismoAtual.value = "";
-  ocultismoMaximo.value = "";
-  multiply.value = "";
-  placeReside.value = "";
-  photo.src = "character.png";
-  sClasse.value = "-";
-  sTril.value = "-";
-  sPat.value = "-";
-  sOri.value = "-";
-  sAfin.value = "-";
-  salvar();
-});
 
 function imgchange() {
   addimg.style.display = "block";
@@ -600,24 +579,24 @@ fundoEscuro.addEventListener("click", () => {
   fundoEscuro.style.display = "none";
 });
 
-var verifyInt = /\d+/g;
+
 
 $("#EP").blur(function () {
+  var verifyInt = /\d+/g;
   if ($("#EP").val().match(verifyInt) != null) {
-    EP.value = EP.value + "%";
-  }
-});
+    EP.value = EP.value + "%"
+}});
 $("#EP").focus(function () {
-  EP.value = "";
+  $("#EP").val("");
 });
 $(window).scroll(function(e){ 
   var $el = $('.rollDices');
-  var isPositionFixed = ($el.css('position') == 'fixed');
+  var isPositionFixed = ($el.css('position') == 'sticky');
   if ($(this).scrollTop() > 211 && !isPositionFixed){ 
-    $el.css({'position': 'fixed', 'top': '0px', 'right': '100px'})
+    $el.css({'position': 'sticky', 'top': '0px', 'margin-right':'390px'})
   }
   if ($(this).scrollTop() < 211 && isPositionFixed){
-    $el.css({'position': 'static', 'top': '0px'})
+    $el.css({'position': 'static', 'top': '0px', 'margin-right':'0px'})
   } 
 });
 $("#t").click(function () {
@@ -630,3 +609,98 @@ $("#i").click(function () {
     $(".checkboxs").css({'display':'contents'})
   }
 })
+
+function afinidade(){
+  if($("#afinidade").val() == "Conhecimento"){
+    console.log("Conhecimento")
+    $(".ordem").attr("src", "Conhecimento.png")
+  }else if($("#afinidade").val() == "Energia"){
+    console.log("Energia")
+    $(".ordem").attr("src", "Energia.png")
+  }else if ($("#afinidade").val() == "Morte"){
+    console.log("Morte")
+    $(".ordem").attr("src", "Morte.png")
+  }else if($("#afinidade").val() == "Sangue"){
+    console.log("Sangue")
+    $(".ordem").attr("src", "Sangue.png")
+  }else{
+    $(".ordem").attr("src", "ordem.png")
+  }
+}
+
+$("window").ready(function (){afinidade()});
+$("#afinidade").change(function(){afinidade()});
+
+$("input").blur(function(){salvar()});
+$("#classe").change(function(){salvar()});
+$("#trilha").change(function(){salvar()});
+$("#patente").change(function(){salvar()});
+$("#origem").change(function(){salvar()});
+$("#afinidade").change(function(){salvar()});
+////////////////////////////////////////////////
+/* function rollAtribute (atribute, amount) {
+  const diceNumber = rollDice('1d20')
+  const diceType = calcDice(amount, diceNumber)
+  $('#diceNumber').text(diceNumber)
+  $('#diceType').text(diceType)
+}
+function calcDice(ability, dice) {
+  // Não encontrei uma forma mais fácil, então fiz assim
+
+  const table = [
+    { normal: 20 },
+    { normal: 19, good: 20 },
+    { normal: 18, good: 20 },
+    { normal: 17, good: 19 },
+    { normal: 16, good: 19, extreme: 20 },
+    { normal: 15, good: 18, extreme: 20 },
+    { normal: 14, good: 18, extreme: 20 },
+    { normal: 13, good: 17, extreme: 20 },
+    { normal: 12, good: 17, extreme: 20 },
+    { normal: 11, good: 16, extreme: 20 },
+    { normal: 10, good: 16, extreme: 19 },
+    { normal: 9, good: 16, extreme: 19 },
+    { normal: 8, good: 15, extreme: 19 },
+    { normal: 7, good: 14, extreme: 19 },
+    { normal: 6, good: 14, extreme: 18 },
+    { normal: 5, good: 13, extreme: 18 },
+    { normal: 4, good: 13, extreme: 18 },
+    { normal: 3, good: 12, extreme: 18 },
+    { normal: 2, good: 12, extreme: 18 },
+    { normal: 1, good: 11, extreme: 17 },
+  ]
+
+  const type = table[ability - 1]
+
+  if (type.extreme) {
+    if (dice >= type.extreme) return 'Extremo'
+    if (dice >= type.good) return 'Sucesso Bom'
+    if (dice >= type.normal) return 'Sucesso Normal'
+    if (dice <= type.normal) return 'Fracasso'
+  } else if (type.good) {
+    if (dice >= type.good) return 'Sucesso Bom'
+    if (dice >= type.normal) return 'Sucesso Normal'
+    if (dice <= type.normal) return 'Fracasso'
+  } else if (type.normal) {
+    if (dice >= type.normal) return 'Sucesso Normal'
+    if (dice <= type.normal) return 'Fracasso'
+  }
+}
+function rollDice(dice) {
+  let [count, max] = dice.split('d')
+
+  if (Number(count) && Number(max)) {
+    count = Number(count)
+    max = Number(max)
+
+    let total = 0
+
+    for (let i = 0; i < count; i++) {
+      total += Math.floor(Math.random() * max + 1)
+    }
+
+    return total
+  } else {
+    return null
+  }
+} */

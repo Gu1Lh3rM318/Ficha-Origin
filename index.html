@@ -14,7 +14,7 @@
 <!-- início do preloader -->
 <div id="preloader">
   <div class="inner">
-      <img src="ordem.png">
+      <img src="ordem.png" style="filter: invert(1);">
   </div>
 </div>
 <!-- fim do preloader -->
@@ -214,7 +214,7 @@
     <div class="extra">
       <div class="damage">
         <p>Gastos PE</p>
-        <input type="number" name="damage" id="damage" value="0">
+        <input type="number" name="damage" id="damage" >
       </div>
       <div class="body">
         <p>Corpo</p>
@@ -231,11 +231,11 @@
     <hr>
     <div class="attributesList">
       <div class="attribute">
-        <a onclick="D20()">
+        <a onclick="rollAtribute('${attributes.type}', '${attributes.amount}')">
         <img class="attributeDice" src="20-sided-dice.png" alt="Dado">
       </a>
       <h3>Agilidade</h3>
-      <input type="text" name="appearance"  id="attribute_input_0">
+      <input type="text" name="appearance" id="attribute_input_0">
       </div>
       <div class="attribute">
         <a onclick="D20()">
@@ -262,7 +262,7 @@
         <a onclick="D20()">
         <img class="attributeDice" src="20-sided-dice.png" alt="Dado">
       </a>
-      <h3>Inteligência</h3>
+      <h3>Intelecto</h3>
       <input type="text" name="appearance" id="attribute_input_4">
       </div>
     </div>

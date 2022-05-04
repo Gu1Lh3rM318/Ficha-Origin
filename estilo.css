@@ -110,8 +110,8 @@ body {
   filter: drop-shadow(1px 1px 6px rgb(2, 2, 2));
 }
 .ordem {
-  width: 100px;
-  filter: invert(1);
+  width: 110px;
+  filter: opacity(0.9);
 }
 h1 {
   text-align: center;
@@ -197,7 +197,9 @@ input {
   border-color: #464646;
   border-radius: 50%;
   transition: 2s;
-  max-width: 200px;
+  max-width: 170px;
+  width: 120px;
+  max-height: 170px;
   filter: drop-shadow(1px 1px 6px rgb(2, 2, 2));
 }
 .characterPhoto:hover {
@@ -262,8 +264,8 @@ input {
 }
 .rollDices {
   float: right;
+  position: sticky;
   display: grid;
-  margin-right: 1%;
   grid-template-areas:
     "D12"
     "D10"
@@ -271,7 +273,6 @@ input {
     "D6"
     "D4";
   width: max-content;
-  top: 1px;
   bottom: 15%;
   text-align: center;
   font: 10px "type writer";
@@ -692,7 +693,6 @@ ul{
   display: block;
   background-color: rgb(23, 23, 23);
   color: grey;
-  margin-right: -4px;
   width: 80px;
   height: 30px;
   z-index: 5;
