@@ -24,6 +24,7 @@ function salvar() {
   localStorage.sP = $("#patente").val();
   localStorage.sO = $("#origem").val();
   localStorage.sA = $("#afinidade").val();
+  localStorage.agility = $("#agilidade").val();
 }
 
 function carregar() {
@@ -41,6 +42,7 @@ function carregar() {
   $("#patente").val(localStorage.sP);
   $("#origem").val(localStorage.sO);
   $("#afinidade").val(localStorage.sA);
+  $("#agilidade").val(localStorage.agility);
 }
 
 function saveBars() {
@@ -73,7 +75,7 @@ $("#clear").click(function () {
   $("#trilha").val("-");
   $("#patente").val("-");
   $("#origem").val("-");
-  $("#afinidade").val();
+  $("#afinidade").val("-");
   salvar();
 });
 
@@ -130,56 +132,11 @@ const data = {
       area: "",
     },
   ],
-  attributes: [
-    {
-      type: "Agilidade",
-      amount: 10,
-    },
-    {
-      type: "Constituição",
-      amount: 15,
-    },
-    {
-      type: "Destreza",
-      amount: 14,
-    },
-    {
-      type: "Educação",
-      amount: 10,
-    },
-    {
-      type: "Força",
-      amount: 12,
-    },
-    {
-      type: "Inteligência",
-      amount: 11,
-    },
-    {
-      type: "Poder",
-      amount: 11,
-    },
-    {
-      type: "Sorte",
-      amount: 7,
-    },
-    {
-      type: "Movimento",
-      amount: 11,
-    },
-    {
-      type: "Lutar/Briga",
-      amount: 12,
-    },
-    {
-      type: "Encontrar",
-      amount: 13,
-    },
-    {
-      type: "Escutar",
-      amount: 11,
-    },
-  ],
+  attributes: {
+    agilidade:{
+      amount: "",
+    }
+  }
 };
 ///////////////////////////life///////////////////////
 $(".lifeBar").css(
@@ -541,7 +498,7 @@ function sanityDice() {
   }, 5000);
   function TresSegundos() {
     number.style.display = "block";
-    number.innerHTML = total;
+    number.innerHTML = aleatorio + " + " + multiply + " = " + total;
     result.style.display = "block";
     result.innerHTML = failureSuccess;
   }
@@ -593,10 +550,10 @@ $(window).scroll(function(e){
   var $el = $('.rollDices');
   var isPositionFixed = ($el.css('position') == 'sticky');
   if ($(this).scrollTop() > 211 && !isPositionFixed){ 
-    $el.css({'position': 'sticky', 'top': '0px', 'margin-right':'390px'})
+    $el.css({'position': 'fixed', 'top': '0px'})
   }
   if ($(this).scrollTop() < 211 && isPositionFixed){
-    $el.css({'position': 'static', 'top': '0px', 'margin-right':'0px'})
+    $el.css({'position': 'sticky', 'top': '0px'})
   } 
 });
 $("#t").click(function () {
@@ -612,20 +569,14 @@ $("#i").click(function () {
 
 function afinidade(){
   if($("#afinidade").val() == "Conhecimento"){
-    console.log("Conhecimento")
     $(".ordem").attr("src", "Conhecimento.png")
   }else if($("#afinidade").val() == "Energia"){
-    console.log("Energia")
     $(".ordem").attr("src", "Energia.png")
   }else if ($("#afinidade").val() == "Morte"){
-    console.log("Morte")
     $(".ordem").attr("src", "Morte.png")
   }else if($("#afinidade").val() == "Sangue"){
-    console.log("Sangue")
     $(".ordem").attr("src", "Sangue.png")
-  }else{
-    $(".ordem").attr("src", "ordem.png")
-  }
+  }else{$(".ordem").attr("src", "ordem.png")}
 }
 
 $("window").ready(function (){afinidade()});
@@ -637,70 +588,61 @@ $("#trilha").change(function(){salvar()});
 $("#patente").change(function(){salvar()});
 $("#origem").change(function(){salvar()});
 $("#afinidade").change(function(){salvar()});
+$("#agilidade").blur(function(){salvar()});
+
+
+
+
 ////////////////////////////////////////////////
-/* function rollAtribute (atribute, amount) {
-  const diceNumber = rollDice('1d20')
-  const diceType = calcDice(amount, diceNumber)
-  $('#diceNumber').text(diceNumber)
-  $('#diceType').text(diceType)
+var numeros = [];
+function novoNumero(index) {
+    var sugestao = (Math.round(Math.random() * 20 + 1));
+    if (index.value == 1 && sugestao == numeros[0]) sugestao = novoNumero(index.value);
+    return sugestao;
 }
-function calcDice(ability, dice) {
-  // Não encontrei uma forma mais fácil, então fiz assim
 
-  const table = [
-    { normal: 20 },
-    { normal: 19, good: 20 },
-    { normal: 18, good: 20 },
-    { normal: 17, good: 19 },
-    { normal: 16, good: 19, extreme: 20 },
-    { normal: 15, good: 18, extreme: 20 },
-    { normal: 14, good: 18, extreme: 20 },
-    { normal: 13, good: 17, extreme: 20 },
-    { normal: 12, good: 17, extreme: 20 },
-    { normal: 11, good: 16, extreme: 20 },
-    { normal: 10, good: 16, extreme: 19 },
-    { normal: 9, good: 16, extreme: 19 },
-    { normal: 8, good: 15, extreme: 19 },
-    { normal: 7, good: 14, extreme: 19 },
-    { normal: 6, good: 14, extreme: 18 },
-    { normal: 5, good: 13, extreme: 18 },
-    { normal: 4, good: 13, extreme: 18 },
-    { normal: 3, good: 12, extreme: 18 },
-    { normal: 2, good: 12, extreme: 18 },
-    { normal: 1, good: 11, extreme: 17 },
-  ]
 
-  const type = table[ability - 1]
 
-  if (type.extreme) {
-    if (dice >= type.extreme) return 'Extremo'
-    if (dice >= type.good) return 'Sucesso Bom'
-    if (dice >= type.normal) return 'Sucesso Normal'
-    if (dice <= type.normal) return 'Fracasso'
-  } else if (type.good) {
-    if (dice >= type.good) return 'Sucesso Bom'
-    if (dice >= type.normal) return 'Sucesso Normal'
-    if (dice <= type.normal) return 'Fracasso'
-  } else if (type.normal) {
-    if (dice >= type.normal) return 'Sucesso Normal'
-    if (dice <= type.normal) return 'Fracasso'
-  }
+$("#agilityA").click(function rollAttribute(vezes) {
+  var vezes = document.getElementById("times1").value;
+  if(vezes == ""){vezes = 1}
+  if (vezes == ""){console.log(Math.floor(Math.random() * 20 + 1))}
+  numeros=[]
+  for (var i = 0; i < vezes; i++) {
+    var numero = novoNumero(i);
+    numeros.push(numero);
 }
-function rollDice(dice) {
-  let [count, max] = dice.split('d')
+var soma = numeros.reduce(function(soma, f) {
+   return soma + f;
+});
+var agilidadeValor = document.getElementById("agilidade")
+ var total = soma + Number(agilidadeValor.value)
 
-  if (Number(count) && Number(max)) {
-    count = Number(count)
-    max = Number(max)
+ var aleatorio = `${numeros.join(' + ')}` + " = " + `${soma}` + " + " + `${agilidadeValor.value}` + " = " + `${total}`
 
-    let total = 0
+ resultado.style.display = "grid";
+ fundoEscuro.style.display = "block";
 
-    for (let i = 0; i < count; i++) {
-      total += Math.floor(Math.random() * max + 1)
-    }
+ setTimeout(() => {
+   $(".diceAppear").css("transform", "rotate(360deg)");
+   $(".diceAppear").css("-webkit-transform", "rotate(360deg)");
+   sound();
+ }, 1000);
 
-    return total
-  } else {
-    return null
-  }
-} */
+ setTimeout(() => {
+   $(".diceAppear").css("transform", "rotate(0deg)");
+   $(".diceAppear").css("-webkit-transform", "rotate(0deg)");
+ }, 5000);
+ function DoisSegundos() {
+   number.style.display = "block";
+   number.innerHTML = aleatorio;
+ }
+ function DezSegundos() {
+   resultado.style.display = "none";
+   number.style.display = "none";
+   fundoEscuro.style.display = "none";
+ }
+ setTimeout(DoisSegundos, 1000 * 3);
+ setTimeout(DezSegundos, 1000 * 10);
+  /* console.log(numeros.join(' + '),"=", soma,"+",`${agilidadeValor.value}`,"=", total); */
+});

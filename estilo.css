@@ -64,11 +64,12 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 70%;
+  z-index: 2;
 }
 .details {
   grid-area: details;
   height: auto;
-  max-width: 390px;
+
 }
 .divLS{
     display: flex;
@@ -79,7 +80,6 @@ body {
 }
 .save{
     padding: 10px;
-    margin: 10px;
     cursor: pointer;
     background-color: #0a0b0c;
     color: white;
@@ -141,6 +141,13 @@ h4 {
   cursor: default;
   filter: drop-shadow(1px 1px 6px rgb(2, 2, 2));
 }
+h5{
+  margin-top: 5px;
+  margin-bottom: -5px;
+  text-align: center;
+  font: normal 14px "type writer";
+  color: rgb(153, 153, 153);
+}
 .h4Sanity {
   font: 15px "type writer";
   color: #ffffff;
@@ -170,7 +177,7 @@ input {
   margin-left: 20px;
   margin-right: 20px;
 }
-.input {
+.inputS {
   border: none;
   border-bottom: .1px solid #1d1d1d;
   padding: 1px 5px;
@@ -278,12 +285,14 @@ input {
   font: 10px "type writer";
   filter: grayscale(1);
   filter: drop-shadow(1px 1px 1px rgb(19, 19, 19));
+  z-index: 99;
 }
 .rDices {
   display: flex;
   flex-direction: column;
   grid-gap: 30px;
   filter: grayscale(1);
+  z-index: 99;
 }
 .rDices .tooltiptext12 {
   visibility: hidden;
@@ -695,13 +704,13 @@ ul{
   color: grey;
   width: 80px;
   height: 30px;
-  z-index: 5;
+  z-index: 99;
   font: 22px "type writer";
   cursor: pointer;
 }
 ul:hover > .lista{
   display: block;
-  z-index: 7;
+  z-index: 99;
   animation: fadein .3s;
 }
 .lista{
@@ -710,11 +719,14 @@ ul:hover > .lista{
   margin-top: 1px;
   background-color: rgb(23, 23, 23);
   font: 16px "type writer";
-  z-index: 7;
+  z-index: 99;
 
 }
 .lista > img{
-  z-index: 7;
+  z-index: 99;
+}
+li{
+  z-index: 99;
 }
 form{
   display: flex;
@@ -788,8 +800,8 @@ hr {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  margin-left: 25px;
-  margin-right: 25px;
+  margin-left: 3px;
+  margin-right: 4px;
   margin-bottom: 10px;
 }
 .attribute a {
@@ -807,12 +819,12 @@ hr {
 .attributes .attribute {
   display: flex;
   flex-direction: column;
-  margin: 10px;
-  width: 85px;
+  width: 145px;
+  align-items: center;
 }
 .attribute input {
-  width: 40%;
-  text-align: center;
+  width: 32px;
+  text-align: right;
   margin-top: 5px;
   font-size: 18px;
   align-self: center;
