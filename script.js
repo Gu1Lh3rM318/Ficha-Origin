@@ -624,7 +624,7 @@ $("#agilityA").click(function rollAttribute(vezes) {
 
   var aleatorio = numeros.length + "d20" + " = " + numeros.reduce(soma) + " + " + atributoValor.value + " = " + total;
     if(Number(atributoValor.value) == ""){aleatorio = total}
-    if(vezes >= 2){aleatorio = numeros.length + "d20" + " = " + total}
+    if(Number(atributoValor.value) == "" && vezes >= 2){aleatorio = numeros.length + "d20" + " = " + total}
 
   resultado.style.display = "grid";
   fundoEscuro.style.display = "block";
@@ -665,8 +665,8 @@ $("#forcaA").click(function rollAttribute(vezes) {
   var total = numeros.reduce(soma) + Number(atributoValor.value)
 
   var aleatorio = numeros.length + "d20" + " = " + numeros.reduce(soma) + " + " + atributoValor.value + " = " + total;
-    if(Number(atributoValor.value) == ""){aleatorio = total}
-    if(vezes >= 2){aleatorio = numeros.length + "d20" + " = " + total}
+  if(Number(atributoValor.value) == ""){aleatorio = total}
+  if(Number(atributoValor.value) == "" && vezes >= 2){aleatorio = numeros.length + "d20" + " = " + total}
 
   resultado.style.display = "grid";
   fundoEscuro.style.display = "block";
@@ -707,8 +707,8 @@ $("#vigorA").click(function rollAttribute(vezes) {
   var total = numeros.reduce(soma) + Number(atributoValor.value)
 
   var aleatorio = numeros.length + "d20" + " = " + numeros.reduce(soma) + " + " + atributoValor.value + " = " + total;
-    if(Number(atributoValor.value) == ""){aleatorio = total}
-    if(vezes >= 2){aleatorio = numeros.length + "d20" + " = " + total}
+  if(Number(atributoValor.value) == ""){aleatorio = total}
+  if(Number(atributoValor.value) == "" && vezes >= 2){aleatorio = numeros.length + "d20" + " = " + total}
 
   resultado.style.display = "grid";
   fundoEscuro.style.display = "block";
@@ -749,8 +749,8 @@ $("#presencaA").click(function rollAttribute(vezes) {
   var total = numeros.reduce(soma) + Number(atributoValor.value)
 
   var aleatorio = numeros.length + "d20" + " = " + numeros.reduce(soma) + " + " + atributoValor.value + " = " + total;
-    if(Number(atributoValor.value) == ""){aleatorio = total}
-    if(vezes >= 2){aleatorio = numeros.length + "d20" + " = " + total}
+  if(Number(atributoValor.value) == ""){aleatorio = total}
+  if(Number(atributoValor.value) == "" && vezes >= 2){aleatorio = numeros.length + "d20" + " = " + total}
 
   resultado.style.display = "grid";
   fundoEscuro.style.display = "block";
@@ -791,8 +791,8 @@ $("#intelectoA").click(function rollAttribute(vezes) {
   var total = numeros.reduce(soma) + Number(atributoValor.value)
 
   var aleatorio = numeros.length + "d20" + " = " + numeros.reduce(soma) + " + " + atributoValor.value + " = " + total;
-    if(Number(atributoValor.value) == ""){aleatorio = total}
-    if(vezes >= 2){aleatorio = numeros.length + "d20" + " = " + total}
+  if(Number(atributoValor.value) == ""){aleatorio = total}
+  if(Number(atributoValor.value) == "" && vezes >= 2){aleatorio = numeros.length + "d20" + " = " + total}
 
   resultado.style.display = "grid";
   fundoEscuro.style.display = "block";
