@@ -898,7 +898,7 @@ $(".selectsAtt").click(function(){
   total5.val(soma2);
   //////////////////////
 });
-$(".input").change(function(){
+$(".outros").change(function(){
   var valor1 = Number($("#input-1").val());
   var valor2 = Number($("#input-2").val())
   var total3 = $("#input-3")
