@@ -34,7 +34,7 @@
 </div>
 <div class='container'>
 <div class='details border'>
-  <div class="rollDices">
+  <!-- <div class="rollDices">
     <div class="rDices">
       <ul>Dados<div class="lista">
           <li>
@@ -65,7 +65,7 @@
         </div>
       </ul>
     </div>
-  </div>
+  </div> -->
   <h2>DADOS DO AGENTE</h2>
   <hr>
   <div class='divInputs'>
@@ -155,11 +155,11 @@
     </div>
     <div class="checkboxs">
       <form action="">
-        <input type="checkbox" id="lesion" name="lesion" value="lesion">
+        <input type="checkbox" id="lesion" class="checkS"name="lesion" value="lesion">
         <label for="lesion">Lesão grave</label>
-        <input type="checkbox" id="injury" name="injury" value="injury">
+        <input type="checkbox" id="injury" class="checkS"name="injury" value="injury">
         <label for="injury"> Inconciente</label>
-        <input type="checkbox" id="dying" name="dying" value="dying">
+        <input type="checkbox" id="dying" class="checkS" name="dying" value="dying">
         <label for="dying" style="margin-right: 0;"> Morrendo</label>
       </form>
     </div>
@@ -234,8 +234,8 @@
     <h3>Agilidade</h3>
     <h5>Modificador</h5>
     <input type="number" id="agilidade">
-    <h5>Rolar</h5>
-    <input type="number" id="times1" value="1">
+    <!-- <h5>Rolar</h5>
+    <input type="number" id="times1" value="1"> -->
   </div>
     <div class="attribute">
 
@@ -246,8 +246,8 @@
     <h3>Força</h3>
     <h5>Modificador</h5>
     <input type="number"  id="forca">
-    <h5>Rolar</h5>
-    <input type="number" id="times2" value="1">
+    <!-- <h5>Rolar</h5>
+    <input type="number" id="times2" value="1"> -->
   </div>
 
     <div class="attribute">
@@ -258,8 +258,8 @@
     <h3>Vigor</h3>
     <h5>Modificador</h5>
     <input type="number"  id="vigor">
-    <h5>Rolar</h5>
-    <input type="number" id="times3" value="1">
+    <!-- <h5>Rolar</h5>
+    <input type="number" id="times3" value="1"> -->
   </div>
 
     <div class="attribute">
@@ -270,8 +270,8 @@
     <h3>Presença</h3>
     <h5>Modificador</h5>
     <input type="number"  id="presenca">
-    <h5>Rolar</h5>
-    <input type="number" id="times4" value="1">
+    <!-- <h5>Rolar</h5>
+    <input type="number" id="times4" value="1"> -->
   </div>
 
     <div class="attribute">
@@ -282,15 +282,229 @@
     <h3>Intelecto</h3>
     <h5>Modificador</h5>
     <input type="number"  id="intelecto">
-    <h5>Rolar</h5>
-    <input type="number" id="times5" value="1">
+    <!-- <h5>Rolar</h5>
+    <input type="number" id="times5" value="1"> -->
   </div>
 
   </div>
 </div>
 <div class="expertise border">
-  <h2 class="grid-title">PERICIA</h2>
+  <h2 class="grid-title">PERICIAS</h2>
+  <h6>* = Só treinadas | " = Penalidade de Carga</h6>
   <hr>
+  <div class="expertiseList"> 
+    <div class="grid-table">
+    <table>
+      <tr>
+        <td><h5>Atributos</h5></td>
+        <td><h5>Bonus</h5></td>
+        <td><h5>Outros</h5></td>
+        <td><h5>Total</h5></td>
+        <td><h5>T</h5></td>
+        <td><h5>C</h5></td>
+        <td><h5>E</h5></td>
+      </tr>
+      <tr>
+        <td>Atletismo" - FOR</td>
+        <td><input type="number" id="input-1"></td>
+        <td><input type="number" id="input-2"></td>
+        <td><input type="number" id="input-3"></td>
+        <td><input type="checkbox" id="select-1" class="selectsAtt"> <label for="select-1"></label></td>
+        <td><input type="checkbox" id="select-2" class="selectsAtt"> <label for="select-2"></label></td>
+        <td><input type="checkbox" id="select-3" class="selectsAtt"> <label for="select-3"></label></td>
+      </tr>
+      <tr>
+        <td>Atualidade - INT</td>
+        <td><input type="number" id="input-4"></td>
+        <td><input type="number" id="input-5"></td>
+        <td><input type="number" id="input-6"></td>
+        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
+        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
+        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+      </tr>
+      <tr>
+        <td>Ciência - INT</td>
+        <td><input type="number" id="input-4"></td>
+        <td><input type="number" id="input-5"></td>
+        <td><input type="number" id="input-6"></td>
+        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
+        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
+        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+      </tr>
+      <tr>
+        <td>Diplomacia - PRE</td>
+        <td><input type="number" id="input-4"></td>
+        <td><input type="number" id="input-5"></td>
+        <td><input type="number" id="input-6"></td>
+        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
+        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
+        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+      </tr>
+      <tr>
+        <td>Enganação - PRE</td>
+        <td><input type="number" id="input-4"></td>
+        <td><input type="number" id="input-5"></td>
+        <td><input type="number" id="input-6"></td>
+        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
+        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
+        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+      </tr>
+      <tr>
+        <td>Fortitude - VIG</td>
+        <td><input type="number" id="input-4"></td>
+        <td><input type="number" id="input-5"></td>
+        <td><input type="number" id="input-6"></td>
+        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
+        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
+        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+      </tr>
+      <tr>
+        <td>Furtividade" - AGI</td>
+        <td><input type="number" id="input-4"></td>
+        <td><input type="number" id="input-5"></td>
+        <td><input type="number" id="input-6"></td>
+        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
+        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
+        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+      </tr>
+      <tr>
+        <td>Intuição - PRE</td>
+        <td><input type="number" id="input-4"></td>
+        <td><input type="number" id="input-5"></td>
+        <td><input type="number" id="input-6"></td>
+        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
+        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
+        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+      </tr>
+      <tr>
+        <td>Investigação - INT</td>
+        <td><input type="number" id="input-4"></td>
+        <td><input type="number" id="input-5"></td>
+        <td><input type="number" id="input-6"></td>
+        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
+        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
+        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+      </tr>
+      <tr>
+        <td>Luta - FOR ou AGI</td>
+        <td><input type="number" id="input-4"></td>
+        <td><input type="number" id="input-5"></td>
+        <td><input type="number" id="input-6"></td>
+        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
+        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
+        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+      </tr>
+      <tr>
+        <td>Medicina* - INT</td>
+        <td><input type="number" id="input-4"></td>
+        <td><input type="number" id="input-5"></td>
+        <td><input type="number" id="input-6"></td>
+        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
+        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
+        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+      </tr>
+      <tr>
+        <td>Ocultismo* - INT</td>
+        <td><input type="number" id="input-4"></td>
+        <td><input type="number" id="input-5"></td>
+        <td><input type="number" id="input-6"></td>
+        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
+        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
+        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+      </tr>
+      <tr>
+        <td>Percepção - INT</td>
+        <td><input type="number" id="input-4"></td>
+        <td><input type="number" id="input-5"></td>
+        <td><input type="number" id="input-6"></td>
+        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
+        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
+        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+      </tr>
+      <tr>
+        <td>Pilotagem* - INT</td>
+        <td><input type="number" id="input-4"></td>
+        <td><input type="number" id="input-5"></td>
+        <td><input type="number" id="input-6"></td>
+        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
+        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
+        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+      </tr>
+      <tr>
+        <td>Pontaria - AGI</td>
+        <td><input type="number" id="input-4"></td>
+        <td><input type="number" id="input-5"></td>
+        <td><input type="number" id="input-6"></td>
+        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
+        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
+        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+      </tr>
+      <tr>
+        <td>Prestidigitação" - AGI</td>
+        <td><input type="number" id="input-4"></td>
+        <td><input type="number" id="input-5"></td>
+        <td><input type="number" id="input-6"></td>
+        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
+        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
+        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+      </tr>
+      <tr>
+        <td>Profissão*</td>
+        <td><input type="number" id="input-4"></td>
+        <td><input type="number" id="input-5"></td>
+        <td><input type="number" id="input-6"></td>
+        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
+        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
+        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+      </tr>
+      <tr>
+        <td>Reflexos" - AGI</td>
+        <td><input type="number" id="input-4"></td>
+        <td><input type="number" id="input-5"></td>
+        <td><input type="number" id="input-6"></td>
+        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
+        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
+        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+      </tr>
+      <tr>
+        <td>Religião - INT</td>
+        <td><input type="number" id="input-4"></td>
+        <td><input type="number" id="input-5"></td>
+        <td><input type="number" id="input-6"></td>
+        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
+        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
+        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+      </tr>
+      <tr>
+        <td>Tática* - INT</td>
+        <td><input type="number" id="input-4"></td>
+        <td><input type="number" id="input-5"></td>
+        <td><input type="number" id="input-6"></td>
+        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
+        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
+        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+      </tr>
+      <tr>
+        <td>Tecnologia* - INT</td>
+        <td><input type="number" id="input-4"></td>
+        <td><input type="number" id="input-5"></td>
+        <td><input type="number" id="input-6"></td>
+        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
+        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
+        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+      </tr>
+      <tr>
+        <td>Vontade - PRE</td>
+        <td><input type="number" id="input-4"></td>
+        <td><input type="number" id="input-5"></td>
+        <td><input type="number" id="input-6"></td>
+        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
+        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
+        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+      </tr>
+    </table>
+  </div>
+  </div>
 </div>
 <div class="divLS">
     <!-- <button type="submit" onclick="salvar()" class="save">Guardar Informações</button>

@@ -610,7 +610,7 @@ function novoNumero(index) {
     return sugestao;
 }
 /////////////rolarAtributos//////////////////////
-$("#agilityA").click(function rollAttribute(vezes) {
+/* $("#agilityA").click(function rollAttribute(vezes) {
   var vezes = document.getElementById("times1").value;
     if(vezes == "" || vezes == 0){vezes = 1}
   numeros=[]
@@ -819,3 +819,97 @@ $("#intelectoA").click(function rollAttribute(vezes) {
     fundoEscuro.style.display = "none";
     }, 1000 * 8);
 });
+ */
+/////////////rolarAtributos//////////////////////
+var select1 = document.getElementById("select-1")
+var select2 = document.getElementById("select-2")
+var select3= document.getElementById("select-3")
+var select4 = document.getElementById("select-4")
+var select5 = document.getElementById("select-5")
+var select6 = document.getElementById("select-6")
+$("#input-1").val(0)
+$("#input-4").val(0)
+
+/* $(".selectsAtt").click(function () {
+  if (select1.checked == true){
+    select2.checked = false;
+    select3.checked = false;
+    }
+  if (select2.checked == true){
+      select1.checked = false;
+      select3.checked = false;
+  }
+  if (select3.checked == true){
+      select2.checked = false;
+      select1.checked = false;
+    }
+  if (select4.checked == true){
+      select5.checked = false;
+      select6.checked = false;
+    }
+  if (select5.checked == true){
+      select4.checked = false;
+      select6.checked = false;
+    }
+  if (select6.checked == true){
+      select4.checked = false;
+      select5.checked = false;
+    }
+}) */
+
+
+/* Altera valores */
+$(".selectsAtt").click(function () {
+  if(select1.checked == true){
+    $("#input-1").val(5)
+  }else if (select2.checked == true){
+    $("#input-1").val(10)
+  }
+  else if(select3.checked == true){
+    $("#input-1").val(15)
+  }else {
+    $("#input-1").val(0)
+  }
+
+  if(select4.checked == true){
+    $("#input-4").val(5)
+  }else if (select5.checked == true){
+    $("#input-4").val(10)
+  }
+  else if(select6.checked == true){
+    $("#input-4").val(15)
+  }else {
+    $("#input-4").val(0)
+  }
+});
+
+/* Soma valores */
+$(".selectsAtt").click(function(){
+  var valor1 = Number($("#input-1").val());
+  var valor2 = Number($("#input-2").val())
+  var total3 = $("#input-3")
+  var soma1 = valor1 + valor2
+  total3.val(soma1);
+  //////////////////////
+  var valor3 = Number($("#input-4").val());
+  var valor4 = Number($("#input-5").val())
+  var total5 = $("#input-6")
+  var soma2 = valor3 + valor4
+  total5.val(soma2);
+  //////////////////////
+});
+$("#input-2").change(function(){
+  var valor1 = Number($("#input-1").val());
+  var valor2 = Number($("#input-2").val())
+  var total3 = $("#input-3")
+  var soma1 = valor1 + valor2
+  total3.val(soma1)
+  //////////////////////
+  var valor3 = Number($("#input-4").val());
+  var valor4 = Number($("#input-5").val())
+  var total5 = $("#input-6")
+  var soma2 = valor3 + valor4
+  total5.val(soma2);
+  //////////////////////
+});
+//////////////////
