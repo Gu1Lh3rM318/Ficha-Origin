@@ -846,10 +846,10 @@ table{
 table td{
   border: 0.1px solid #1d1d1d;
   padding: 2px;
-  height: 10px;
+  height: 100%;
 }
 table input{
-  width: 20px;
+  width: 40px;
   height: 10px;
   border: none;
   color: rgb(153, 153, 153);
