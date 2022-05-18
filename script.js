@@ -488,8 +488,8 @@ $("#crazed").change(function () {
 ///////////////////////////||////////////////////////
 function sanityDice() {
   var aleatorio = Math.floor(Math.random() * 20 + 1);
-  var multiply = Number($("#increment").val());
-  var total = aleatorio + multiply;
+  /* var multiply = Number($("#increment").val()); */
+  var total = aleatorio
   resultado.style.display = "grid";
   fundoEscuro.style.display = "block";
   var current = Number($("#sanityCurrent").val());
@@ -521,7 +521,7 @@ function sanityDice() {
   }, 5000);
   function TresSegundos() {
     number.style.display = "block";
-    number.innerHTML = aleatorio + " + " + multiply + " = " + total;
+    number.innerHTML = total;
     result.style.display = "block";
     result.innerHTML = failureSuccess;
   }

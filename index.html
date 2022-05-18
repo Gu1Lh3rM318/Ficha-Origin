@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="favicon.ico">
 <title>Ficha de Personagem</title>
 <link rel="stylesheet" href="estilo.css">
 <link rel="stylesheet" href="css.css">
@@ -163,7 +164,8 @@
         <label for="dying" style="margin-right: 0;"> Morrendo</label>
       </form>
     </div>
-    <h4 class='h4Sanity'>Sanidade</h4>
+    <h4 class='h4Sanity'>Sanidade<img class="sanityDice" src="20-sided-dice.png" onclick="sanityDice()" alt="Dado"></h4>
+    
     <div class="sanity">
       <div class="contentSanityBar">
         <div class="sanityBar">
@@ -185,10 +187,10 @@
       <input type="checkbox" id="crazed" name="crazed" value="crazed">
       <label for="crazed"> Enlouquecido</label>
     </div>
-    <div class="rolagemSanity">
+    <!-- <div class="rolagemSanity">
       <p>Multiplicador: <input type="text" name="increment" id="increment"></p>
-      <p><img class="sanityDice" src="20-sided-dice.png" onclick="sanityDice()" alt="Dado"></p>
-    </div>
+      <p></p>
+    </div> -->
     <div class="ocultismo">
       <h4>Pts Esforço</h4>
       <div class="contentOcultBar">
@@ -212,14 +214,39 @@
       <input type="number" name="damage" id="damage" >
     </div>
     <div class="body">
-      <p>Corpo</p>
+      <p>Deslocamento</p>
       <input type="number" name="body" id="body">
     </div>
     <div class="exposure">
-      <p>Exp. P.</p>
+      <p>NEX</p>
       <input type="text" name="EP" id="EP">
     </div>
   </div>
+<!--   <div class="resistences-defence">
+    <div class="resistences">
+      <div>
+      <h4>Resistencias a Dano</h4>
+      <div class="fisic-ammo">
+        <h4>Física</h4>
+        <p><input type="number"></p>
+        <h4>Balística</h4>
+        <p><input type="number"></p>
+        </div>
+      <h4>Resistencia a insanidade</h4>
+      </div>
+      
+    </div>
+    <div class="defences">
+      <h4>Defesas</h4>
+      <p>Passiva</p>
+      <input type="number">
+      <p>Bloqueio</p>
+      <input type="number">
+      <p>Esquiva</p>
+      <input type="number">
+
+    </div>
+  </div> -->
 </div>
 <div class="attributes border">
   <h2 class="grid-title">ATRIBUTOS</h2>
