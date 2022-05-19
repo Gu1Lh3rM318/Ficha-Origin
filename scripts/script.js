@@ -32,14 +32,16 @@ function salvar() {
 
 }
 
-$("window").ready(afinidade(),soma(),carregar());
-$("#afinidade").change(afinidade());
-$("input").on('keypress',salvar());
-$("#classe").change(salvar());
-$("#trilha").change(salvar());
-$("#patente").change(salvar());
-$("#origem").change(salvar());
-$("#afinidade").change(salvar());
+$("window").ready(function () {
+  afinidade();soma();carregar()
+});
+$("#afinidade").change(function () {afinidade()});
+$("input").on('keyup',function (){salvar()});
+$("#classe").change(function (){salvar()});
+$("#trilha").change(function (){salvar()});
+$("#patente").change(function (){salvar()});
+$("#origem").change(function (){salvar()});
+$("#afinidade").change(function (){salvar()});
 /* $("#agilidade").blur(function(){salvar()}); */
 
 function carregar() {
