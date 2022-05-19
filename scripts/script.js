@@ -32,9 +32,9 @@ function salvar() {
 
 }
 
-$("window").ready(afinidade(),soma());
+$("window").ready(afinidade(),soma(),carregar());
 $("#afinidade").change(afinidade());
-$("input").blur(salvar());
+$("input").on('keypress',salvar());
 $("#classe").change(salvar());
 $("#trilha").change(salvar());
 $("#patente").change(salvar());
@@ -188,7 +188,6 @@ const lifeModal = $("#lifeModal");
 const sanityModal = $("#sanityModal");
 const ocultModal = $("#ocultModal");
 ///////////////////////////life///////////////////////
-///////////////////////////life///////////////////////
 $("#changeLife").submit(function (event) {
   let current = Number($("#lifeCurrent").val());
   let max = Number($("#lifeMax").val());
@@ -239,8 +238,6 @@ $("#changeSanity").submit(function (event) {
   event.preventDefault();
   saveBars();
 });
-///////////////////////////sanity/////////////////////
-
 ///////////////////////////sanity/////////////////////
 function calculateBar(current, max) {
   if (current > max) {
@@ -521,7 +518,7 @@ function sanityDice() {
   setTimeout(CincoSegundos, 1000 * 5);
 }
 ////////////////////sanityDice///////////////////////
-$(".body").ready(`${carregar()}`);
+$(".body").ready(carregar());
 ///////////////////////////||////////////////////////
 
 function imgchange() {
