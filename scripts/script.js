@@ -29,16 +29,17 @@ function salvar() {
   localStorage.vigour = $("#vigor").val();
   localStorage.presence = $("#presenca").val();
   localStorage.intellect = $("#intelecto").val();
+
 }
 
-$("window").ready(function (){afinidade()});
-$("#afinidade").change(function(){afinidade()});
-$("input").blur(function(){salvar()});
-$("#classe").change(function(){salvar()});
-$("#trilha").change(function(){salvar()});
-$("#patente").change(function(){salvar()});
-$("#origem").change(function(){salvar()});
-$("#afinidade").change(function(){salvar()});
+$("window").ready(afinidade(),soma());
+$("#afinidade").change(afinidade());
+$("input").blur(salvar());
+$("#classe").change(salvar());
+$("#trilha").change(salvar());
+$("#patente").change(salvar());
+$("#origem").change(salvar());
+$("#afinidade").change(salvar());
 /* $("#agilidade").blur(function(){salvar()}); */
 
 function carregar() {
@@ -155,11 +156,7 @@ const data = {
       area: "",
     },
   ],
-  attributes: {
-    agilidade:{
-      amount: "",
-    }
-  }
+
 };
 ///////////////////////////life///////////////////////
 $(".lifeBar").css(
@@ -191,17 +188,6 @@ const lifeModal = $("#lifeModal");
 const sanityModal = $("#sanityModal");
 const ocultModal = $("#ocultModal");
 ///////////////////////////life///////////////////////
-$(".lifeBar").click(function () {
-  lifeModal.css("display", "block");
-});
-///////////////////////////sanity/////////////////////
-$(".sanityBar").click(function () {
-  sanityModal.css("display", "block");
-});
-///////////////////////////ocult///////////////////////
-$(".ocultBar").click(function () {
-  ocultModal.css("display", "block");
-});
 ///////////////////////////life///////////////////////
 $("#changeLife").submit(function (event) {
   let current = Number($("#lifeCurrent").val());
@@ -593,14 +579,14 @@ $("#i").click(function () {
 /////////////////mudar logo/////////////////////
 function afinidade(){
   if($("#afinidade").val() == "Conhecimento"){
-    $(".ordem").attr("src", "Conhecimento.png")
+    $(".ordem").attr("src", "imagens/Conhecimento.png")
   }else if($("#afinidade").val() == "Energia"){
-    $(".ordem").attr("src", "Energia.png")
+    $(".ordem").attr("src", "imagens/Energia.png")
   }else if ($("#afinidade").val() == "Morte"){
-    $(".ordem").attr("src", "Morte.png")
+    $(".ordem").attr("src", "imagens/Morte.png")
   }else if($("#afinidade").val() == "Sangue"){
-    $(".ordem").attr("src", "Sangue.png")
-  }else{$(".ordem").attr("src", "ordem.png")}
+    $(".ordem").attr("src", "imagens/Sangue.png")
+  }else{$(".ordem").attr("src", "imagens/ordem.png")}
 }
 ////////////////////////////////////////////////
 var numeros = [];
@@ -821,95 +807,55 @@ $("#intelectoA").click(function rollAttribute(vezes) {
 });
  */
 /////////////rolarAtributos//////////////////////
-var select1 = document.getElementById("select-1")
-var select2 = document.getElementById("select-2")
-var select3= document.getElementById("select-3")
-var select4 = document.getElementById("select-4")
-var select5 = document.getElementById("select-5")
-var select6 = document.getElementById("select-6")
-$("#input-1").val(0)
-$("#input-4").val(0)
+function soma() {
+  $("#input-3").val(Number($("#input-1").val()) + Number($("#input-2").val()))
+  //////////////////////
+  $("#input-6").val(Number($("#input-4").val()) + Number($("#input-5").val()))
+  //////////////////////
+  $("#input-9").val(Number($("#input-7").val()) + Number($("#input-8").val()))
+  //////////////////////
+  $("#input-12").val(Number($("#input-10").val()) + Number($("#input-11").val()))
+  //////////////////////
+  $("#input-15").val(Number($("#input-13").val()) + Number($("#input-14").val()))
+  //////////////////////
+  $("#input-18").val(Number($("#input-16").val()) + Number($("#input-17").val()))
+  //////////////////////
+  $("#input-21").val(Number($("#input-19").val()) + Number($("#input-20").val()))
+  //////////////////////
+  $("#input-24").val(Number($("#input-22").val()) + Number($("#input-23").val()))
+  //////////////////////
+  $("#input-27").val(Number($("#input-25").val()) + Number($("#input-26").val()))
+  //////////////////////
+  $("#input-30").val(Number($("#input-28").val()) + Number($("#input-29").val()))
+  //////////////////////
+  $("#input-33").val(Number($("#input-31").val()) + Number($("#input-32").val()))
+  //////////////////////
+  $("#input-36").val(Number($("#input-34").val()) + Number($("#input-35").val()))
+  //////////////////////
+  $("#input-39").val(Number($("#input-37").val()) + Number($("#input-38").val()))
+  //////////////////////
+  $("#input-42").val(Number($("#input-40").val()) + Number($("#input-41").val()))
+  //////////////////////
+  $("#input-45").val(Number($("#input-43").val()) + Number($("#input-44").val()))
+  //////////////////////
+  $("#input-48").val(Number($("#input-46").val()) + Number($("#input-47").val()))
+  //////////////////////
+  $("#input-51").val(Number($("#input-49").val()) + Number($("#input-50").val()))
+  //////////////////////
+  $("#input-54").val(Number($("#input-52").val()) + Number($("#input-53").val()))
+  //////////////////////
+  $("#input-57").val(Number($("#input-55").val()) + Number($("#input-56").val()))
+  //////////////////////
+  $("#input-60").val(Number($("#input-58").val()) + Number($("#input-59").val()))
+  //////////////////////
+  $("#input-63").val(Number($("#input-61").val()) + Number($("#input-62").val()))
+  //////////////////////
+  $("#input-66").val(Number($("#input-64").val()) + Number($("#input-65").val()))
 
-/* $(".selectsAtt").click(function () {
-  if (select1.checked == true){
-    select2.checked = false;
-    select3.checked = false;
-    }
-  if (select2.checked == true){
-      select1.checked = false;
-      select3.checked = false;
-  }
-  if (select3.checked == true){
-      select2.checked = false;
-      select1.checked = false;
-    }
-  if (select4.checked == true){
-      select5.checked = false;
-      select6.checked = false;
-    }
-  if (select5.checked == true){
-      select4.checked = false;
-      select6.checked = false;
-    }
-  if (select6.checked == true){
-      select4.checked = false;
-      select5.checked = false;
-    }
-}) */
-
-
-/* Altera valores */
-$(".selectsAtt").click(function () {
-  if(select1.checked == true){
-    $("#input-1").val(5)
-  }else if (select2.checked == true){
-    $("#input-1").val(10)
-  }
-  else if(select3.checked == true){
-    $("#input-1").val(15)
-  }else {
-    $("#input-1").val(0)
-  }
-
-  if(select4.checked == true){
-    $("#input-4").val(5)
-  }else if (select5.checked == true){
-    $("#input-4").val(10)
-  }
-  else if(select6.checked == true){
-    $("#input-4").val(15)
-  }else {
-    $("#input-4").val(0)
-  }
-});
-
+}
 /* Soma valores */
-$(".selectsAtt").click(function(){
-  var valor1 = Number($("#input-1").val());
-  var valor2 = Number($("#input-2").val())
-  var total3 = $("#input-3")
-  var soma1 = valor1 + valor2
-  total3.val(soma1);
-  //////////////////////
-  var valor3 = Number($("#input-4").val());
-  var valor4 = Number($("#input-5").val())
-  var total5 = $("#input-6")
-  var soma2 = valor3 + valor4
-  total5.val(soma2);
-  //////////////////////
-});
-$(".outros").change(function(){
-  var valor1 = Number($("#input-1").val());
-  var valor2 = Number($("#input-2").val())
-  var total3 = $("#input-3")
-  var soma1 = valor1 + valor2
-  total3.val(soma1)
-  //////////////////////
-  var valor3 = Number($("#input-4").val());
-  var valor4 = Number($("#input-5").val())
-  var total5 = $("#input-6")
-  var soma2 = valor3 + valor4
-  total5.val(soma2);
-  //////////////////////
-});
+$(".outros").on('keyup', soma);
+$(".outros").change(soma);
+$("[data-first]").on('keyup', soma);
+$('[data-first]').change(soma)
 //////////////////

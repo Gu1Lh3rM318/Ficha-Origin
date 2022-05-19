@@ -5,17 +5,17 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="ordem.png" type="image/x-icon">
+<link rel="shortcut icon" href="imagens/ordem.png" type="image/x-icon">
 <title>Ficha de Personagem</title>
-<link rel="stylesheet" href="estilo.css">
-<link rel="stylesheet" href="css.css">
+<link rel="stylesheet" href="estilos/estilo.css">
+<link rel="stylesheet" href="estilos/css.css">
 </head>
 
 <body>
 <!-- início do preloader -->
 <div id="preloader">
 <div class="inner">
-    <img src="ordem.png" style="filter: invert(1);">
+    <img src="imagens/ordem.png" style="filter: invert(1);">
 </div>
 </div>
 <!-- fim do preloader -->
@@ -30,7 +30,7 @@
 <p id='number' class='number'></p>
 <p id='result' class='result'></p>
 </div>
-<div class='logo'><img class='ordem' src='ordem.png'>
+<div class='logo'><img class='ordem' src='imagens/ordem.png'>
 <h1>Ficha De Personagem</h1>
 </div>
 <div class='container'>
@@ -137,7 +137,7 @@
 <div class='character'>
   <div class='characterHeader'>
     <img class="characterPhoto" src="character.png" id="imgPhoto" alt="Foto" onclick="imgchange()">
-    <img class="dice" src="20-sided-dice.png" alt="Dado" onclick='D20()'>
+    <img class="dice" src="imagens/20-sided-dice.png" alt="Dado" onclick='D20()'>
   </div>
   <div class='bars'>
     <h4>Vida</h4>
@@ -148,7 +148,7 @@
             <form class="formModal" id="changeLife">
               <input name="current" id="lifeCurrent" min="0" placeholder='Atual' autocomplete='off'>|
               <input name="max" id="lifeMax" min="0" placeholder='Máxima' autocomplete='off'>
-              <input type="submit" class='submitLife' onclick="saveBars()" value="Enviar">
+              <input type="submit" class='submitLife' onclick="saveBars()" value="►">
             </form>
           </div>
         </div>
@@ -164,8 +164,7 @@
         <label for="dying" style="margin-right: 0;"> Morrendo</label>
       </form>
     </div>
-    <h4 class='h4Sanity'>Sanidade<img class="sanityDice" src="20-sided-dice.png" onclick="sanityDice()" alt="Dado"></h4>
-    
+    <h4 class='h4Sanity'>Sanidade<img class="sanityDice" src="imagens/20-sided-dice.png" onclick="sanityDice()" alt="Dado"></h4>
     <div class="sanity">
       <div class="contentSanityBar">
         <div class="sanityBar">
@@ -174,7 +173,7 @@
               <form class="formModal" id="changeSanity">
                 <input name="sanityCurrent" id="sanityCurrent" min="0" placeholder='Atual' autocomplete='off'>|
                 <input name="sanityMax" id="sanityMax" min="0" placeholder='Máxima' autocomplete='off'>
-                <input type="submit" class='submitLife' onclick="saveBars()" value="Enviar">
+                <input type="submit" class='submitLife' onclick="saveBars()" value="►">
               </form>
             </div>
           </div>
@@ -200,7 +199,7 @@
               <form class="formModal" id="changeOcult">
                 <input name="ocultCurrent" id="ocultCurrent" min="0" placeholder='Atual' autocomplete='off'>|
                 <input name="ocultMax" id="ocultMax" min="0" placeholder='Maxima' autocomplete='off'>
-                <input type="submit" class='submitLife' onclick="saveBars()" value="Enviar">
+                <input type="submit" class='submitLife' onclick="saveBars()" value="►">
               </form>
             </div>
           </div>
@@ -255,7 +254,7 @@
     <div class="attribute">
 
       <a id="agilityA">
-      <img class="attributeDice" src="20-sided-dice.png" alt="Dado">
+      <img class="attributeDice" src="imagens/20-sided-dice.png" alt="Dado">
     </a>
 
     <h3>Agilidade</h3>
@@ -267,7 +266,7 @@
     <div class="attribute">
 
       <a id="forcaA">
-      <img class="attributeDice" src="20-sided-dice.png" alt="Dado">
+      <img class="attributeDice" src="imagens/20-sided-dice.png" alt="Dado">
     </a>
 
     <h3>Força</h3>
@@ -279,7 +278,7 @@
 
     <div class="attribute">
       <a id="vigorA">
-      <img class="attributeDice" src="20-sided-dice.png" alt="Dado">
+      <img class="attributeDice" src="imagens/20-sided-dice.png" alt="Dado">
     </a>
 
     <h3>Vigor</h3>
@@ -291,7 +290,7 @@
 
     <div class="attribute">
       <a id="presencaA">
-      <img class="attributeDice" src="20-sided-dice.png" alt="Dado">
+      <img class="attributeDice" src="imagens/20-sided-dice.png" alt="Dado">
     </a>
 
     <h3>Presença</h3>
@@ -303,7 +302,7 @@
 
     <div class="attribute">
       <a id="intelectoA">
-      <img class="attributeDice" src="20-sided-dice.png" alt="Dado">
+      <img class="attributeDice" src="imagens/20-sided-dice.png" alt="Dado">
     </a>
 
     <h3>Intelecto</h3>
@@ -327,207 +326,157 @@
         <td><h5>Bonus</h5></td>
         <td><h5>Outros</h5></td>
         <td><h5>Total</h5></td>
-        <td><h5>T</h5></td>
+<!--         <td><h5>T</h5></td>
         <td><h5>C</h5></td>
-        <td><h5>E</h5></td>
+        <td><h5>E</h5></td> -->
       </tr>
       <tr>
         <td>Atletismo" - FOR</td>
-        <td><input type="number" id="input-1" disabled></td>
+        <td><input type="number" id="input-1" data-first></td>
         <td><input type="number" id="input-2" class="outros"></td>
         <td><input type="number" id="input-3" disabled></td>
-        <td><input type="checkbox" id="select-1" class="selectsAtt"> <label for="select-1"></label></td>
-        <td><input type="checkbox" id="select-2" class="selectsAtt"> <label for="select-2"></label></td>
-        <td><input type="checkbox" id="select-3" class="selectsAtt"> <label for="select-3"></label></td>
       </tr>
       <tr>
         <td>Atualidade - INT</td>
-        <td><input type="number" id="input-4"disabled></td>
+        <td><input type="number" id="input-4" data-first></td>
         <td><input type="number" id="input-5" class="outros"></td>
         <td><input type="number" id="input-6"disabled></td>
-        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
-        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
-        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
       </tr>
       <tr>
         <td>Ciência - INT</td>
-        <td><input type="number" id="input-4"disabled></td>
-        <td><input type="number" id="input-5" class="outros"></td>
-        <td><input type="number" id="input-6"disabled></td>
-        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
-        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
-        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+        <td><input type="number" id="input-7" data-first></td>
+        <td><input type="number" id="input-8" class="outros"></td>
+        <td><input type="number" id="input-9"disabled></td>
       </tr>
       <tr>
         <td>Diplomacia - PRE</td>
-        <td><input type="number" id="input-4"disabled></td>
-        <td><input type="number" id="input-5" class="outros"></td>
-        <td><input type="number" id="input-6"disabled></td>
-        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
-        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
-        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+        <td><input type="number" id="input-10" data-first></td>
+        <td><input type="number" id="input-11" class="outros"></td>
+        <td><input type="number" id="input-12"disabled></td>
       </tr>
       <tr>
         <td>Enganação - PRE</td>
-        <td><input type="number" id="input-4"disabled></td>
-        <td><input type="number" id="input-5" class="outros"></td>
-        <td><input type="number" id="input-6"disabled></td>
-        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
-        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
-        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+        <td><input type="number" id="input-13" data-first></td>
+        <td><input type="number" id="input-14" class="outros"></td>
+        <td><input type="number" id="input-15"disabled></td>
       </tr>
       <tr>
         <td>Fortitude - VIG</td>
-        <td><input type="number" id="input-4"disabled></td>
-        <td><input type="number" id="input-5" class="outros"></td>
-        <td><input type="number" id="input-6"disabled></td>
-        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
-        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
-        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+        <td><input type="number" id="input-16" data-first></td>
+        <td><input type="number" id="input-17" class="outros"></td>
+        <td><input type="number" id="input-18"disabled></td>
       </tr>
       <tr>
         <td>Furtividade" - AGI</td>
-        <td><input type="number" id="input-4"disabled></td>
-        <td><input type="number" id="input-5" class="outros"></td>
-        <td><input type="number" id="input-6"disabled></td>
-        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
-        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
-        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+        <td><input type="number" id="input-19"data-first></td>
+        <td><input type="number" id="input-20" class="outros"></td>
+        <td><input type="number" id="input-21"disabled></td>
+
       </tr>
       <tr>
         <td>Intuição - PRE</td>
-        <td><input type="number" id="input-4"disabled></td>
-        <td><input type="number" id="input-5" class="outros"></td>
-        <td><input type="number" id="input-6"disabled></td>
-        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
-        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
-        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+        <td><input type="number" id="input-22" data-first></td>
+        <td><input type="number" id="input-23" class="outros"></td>
+        <td><input type="number" id="input-24"disabled></td>
+
       </tr>
       <tr>
         <td>Investigação - INT</td>
-        <td><input type="number" id="input-4"disabled></td>
-        <td><input type="number" id="input-5" class="outros"></td>
-        <td><input type="number" id="input-6"disabled></td>
-        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
-        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
-        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+        <td><input type="number" id="input-25"data-first></td>
+        <td><input type="number" id="input-26" class="outros"></td>
+        <td><input type="number" id="input-27"disabled></td>
+
       </tr>
       <tr>
         <td>Luta - FOR ou AGI</td>
-        <td><input type="number" id="input-4"disabled></td>
-        <td><input type="number" id="input-5" class="outros"></td>
-        <td><input type="number" id="input-6"disabled></td>
-        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
-        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
-        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+        <td><input type="number" id="input-28"data-first></td>
+        <td><input type="number" id="input-29" class="outros"></td>
+        <td><input type="number" id="input-30"disabled></td>
+
       </tr>
       <tr>
         <td>Medicina* - INT</td>
-        <td><input type="number" id="input-4"disabled></td>
-        <td><input type="number" id="input-5" class="outros"></td>
-        <td><input type="number" id="input-6"disabled></td>
-        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
-        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
-        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+        <td><input type="number" id="input-31"data-first></td>
+        <td><input type="number" id="input-32" class="outros"></td>
+        <td><input type="number" id="input-33"disabled></td>
+
       </tr>
       <tr>
         <td>Ocultismo* - INT</td>
-        <td><input type="number" id="input-4"disabled></td>
-        <td><input type="number" id="input-5" class="outros"></td>
-        <td><input type="number" id="input-6"disabled></td>
-        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
-        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
-        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+        <td><input type="number" id="input-34"data-first></td>
+        <td><input type="number" id="input-35" class="outros"></td>
+        <td><input type="number" id="input-36"disabled></td>
+
       </tr>
       <tr>
         <td>Percepção - INT</td>
-        <td><input type="number" id="input-4"disabled></td>
-        <td><input type="number" id="input-5" class="outros"></td>
-        <td><input type="number" id="input-6"disabled></td>
-        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
-        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
-        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+        <td><input type="number" id="input-37"data-first></td>
+        <td><input type="number" id="input-38" class="outros"></td>
+        <td><input type="number" id="input-39"disabled></td>
+
       </tr>
       <tr>
         <td>Pilotagem* - INT</td>
-        <td><input type="number" id="input-4"disabled></td>
-        <td><input type="number" id="input-5" class="outros"></td>
-        <td><input type="number" id="input-6"disabled></td>
-        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
-        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
-        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+        <td><input type="number" id="input-40"data-first></td>
+        <td><input type="number" id="input-41" class="outros"></td>
+        <td><input type="number" id="input-42"disabled></td>
+
       </tr>
       <tr>
         <td>Pontaria - AGI</td>
-        <td><input type="number" id="input-4"disabled></td>
-        <td><input type="number" id="input-5" class="outros"></td>
-        <td><input type="number" id="input-6"disabled></td>
-        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
-        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
-        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+        <td><input type="number" id="input-43"data-first></td>
+        <td><input type="number" id="input-44" class="outros"></td>
+        <td><input type="number" id="input-45"disabled></td>
+
       </tr>
       <tr>
         <td>Prestidigitação" - AGI</td>
-        <td><input type="number" id="input-4"disabled></td>
-        <td><input type="number" id="input-5" class="outros"></td>
-        <td><input type="number" id="input-6"disabled></td>
-        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
-        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
-        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+        <td><input type="number" id="input-46"data-first></td>
+        <td><input type="number" id="input-47" class="outros"></td>
+        <td><input type="number" id="input-48"disabled></td>
+
       </tr>
       <tr>
         <td>Profissão*</td>
-        <td><input type="number" id="input-4"disabled></td>
-        <td><input type="number" id="input-5" class="outros"></td>
-        <td><input type="number" id="input-6"disabled></td>
-        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
-        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
-        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+        <td><input type="number" id="input-49"data-first></td>
+        <td><input type="number" id="input-50" class="outros"></td>
+        <td><input type="number" id="input-51"disabled></td>
+
       </tr>
       <tr>
         <td>Reflexos" - AGI</td>
-        <td><input type="number" id="input-4"disabled></td>
-        <td><input type="number" id="input-5" class="outros"></td>
-        <td><input type="number" id="input-6"disabled></td>
-        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
-        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
-        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+        <td><input type="number" id="input-52"data-first></td>
+        <td><input type="number" id="input-53" class="outros"></td>
+        <td><input type="number" id="input-54"disabled></td>
+
       </tr>
       <tr>
         <td>Religião - INT</td>
-        <td><input type="number" id="input-4"disabled></td>
-        <td><input type="number" id="input-5" class="outros"disabled></td>
-        <td><input type="number" id="input-6"disabled></td>
-        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
-        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
-        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+        <td><input type="number" id="input-55"data-first></td>
+        <td><input type="number" id="input-56" class="outros"disabled></td>
+        <td><input type="number" id="input-57"disabled></td>
+
       </tr>
       <tr>
         <td>Tática* - INT</td>
-        <td><input type="number" id="input-4"disabled></td>
-        <td><input type="number" id="input-5" class="outros"></td>
-        <td><input type="number" id="input-6"disabled></td>
-        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
-        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
-        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+        <td><input type="number" id="input-58"data-first></td>
+        <td><input type="number" id="input-59" class="outros"></td>
+        <td><input type="number" id="input-60"disabled></td>
+
       </tr>
       <tr>
         <td>Tecnologia* - INT</td>
-        <td><input type="number" id="input-4"disabled></td>
-        <td><input type="number" id="input-5" class="outros"></td>
-        <td><input type="number" id="input-6"disabled></td>
-        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
-        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
-        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+        <td><input type="number" id="input-61"data-first></td>
+        <td><input type="number" id="input-62" class="outros"></td>
+        <td><input type="number" id="input-63"disabled></td>
+
       </tr>
       <tr>
         <td>Vontade - PRE</td>
-        <td><input type="number" id="input-4"disabled></td>
-        <td><input type="number" id="input-5" class="outros"></td>
-        <td><input type="number" id="input-6"disabled></td>
-        <td><input type="checkbox" id="select-4" class="selectsAtt"> <label for="select-4"></label></td>
-        <td><input type="checkbox" id="select-5" class="selectsAtt"> <label for="select-5"></label></td>
-        <td><input type="checkbox" id="select-6" class="selectsAtt"> <label for="select-6"></label></td>
+        <td><input type="number" id="input-64"data-first></td>
+        <td><input type="number" id="input-65" class="outros"></td>
+        <td><input type="number" id="input-66"disabled></td>
+
       </tr>
     </table>
   </div>
@@ -541,8 +490,8 @@
 </div>
 <footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
-<script src="script.js"></script>
-<script src="preloader.js"></script>
+<script src="scripts/script.js"></script>
+<script src="scripts/preloader.js"></script>
 </footer>
 </body>
 
