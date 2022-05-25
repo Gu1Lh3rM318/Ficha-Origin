@@ -42,8 +42,10 @@ $("#trilha").change(function (){salvar()});
 $("#patente").change(function (){salvar()});
 $("#origem").change(function (){salvar()});
 $("#afinidade").change(function (){salvar()});
-/* $("#agilidade").blur(function(){salvar()}); */
-
+var textarea = document.getElementById('notes-area');
+textarea.addEventListener("keyup", function (){
+  localStorage.txt = textarea.value ;
+} , false);
 function carregar() {
   $("#player").val(localStorage.nameP);
   $("#personagem").val(localStorage.nameA);
@@ -64,6 +66,7 @@ function carregar() {
   $("#vigor").val(localStorage.vigour);
   $("#presenca").val(localStorage.presence);
   $("#intelecto").val(localStorage.intellect);
+  textarea.value = localStorage.txt
 }
 
 function saveBars() {
@@ -102,6 +105,7 @@ $("#clear").click(function () {
   $("#vigor").val("");
   $("#presenca").val("");
   $("#intelecto").val("");
+  textarea.value = "";
   salvar();
 });
 
@@ -471,9 +475,9 @@ $("#crazed").change(function () {
   }
 });
 ///////////////////////////||////////////////////////
-function sanityDice() {
+/* function sanityDice() {
   var aleatorio = Math.floor(Math.random() * 20 + 1);
-  /* var multiply = Number($("#increment").val()); */
+  var multiply = Number($("#increment").val());
   var total = aleatorio
   resultado.style.display = "grid";
   fundoEscuro.style.display = "block";
@@ -518,7 +522,7 @@ function sanityDice() {
   }
   setTimeout(TresSegundos, 1000 * 3);
   setTimeout(CincoSegundos, 1000 * 5);
-}
+} */
 ////////////////////sanityDice///////////////////////
 $(".body").ready(carregar());
 ///////////////////////////||////////////////////////
@@ -565,16 +569,7 @@ $(window).scroll(function(e){
     $el.css({'position': 'sticky', 'top': '0px'})
   } 
 });
-$("#t").click(function () {
-  if($(".checkboxs").css({'display':'contents'})){
-    $(".checkboxs").css({'display':'none'})
-  }
-})
-$("#i").click(function () {
-  if ($(".checkboxs").css({'display':'none'})){
-    $(".checkboxs").css({'display':'contents'})
-  }
-})
+
 /////////////////mudar logo/////////////////////
 function afinidade(){
   if($("#afinidade").val() == "Conhecimento"){
@@ -595,216 +590,7 @@ function novoNumero(index) {
     return sugestao;
 }
 /////////////rolarAtributos//////////////////////
-/* $("#agilityA").click(function rollAttribute(vezes) {
-  var vezes = document.getElementById("times1").value;
-    if(vezes == "" || vezes == 0){vezes = 1}
-  numeros=[]
-  for (var i = 0; i < vezes; i++) {
-    var numero = novoNumero(i);
-    numeros.push(numero);
-  }
-  var soma = (accumulator, curr) => accumulator + curr;
-  var atributoValor = document.getElementById("agilidade")
-  var total = numeros.reduce(soma) + Number(atributoValor.value)
 
-  var aleatorio = numeros.length + "d20" + " = " + numeros.reduce(soma) + " + " + atributoValor.value + " = " + total;
-    if(Number(atributoValor.value) == ""){aleatorio = total}
-    if(Number(atributoValor.value) == "" && vezes >= 2){aleatorio = numeros.length + "d20" + " = " + total}
-
-  resultado.style.display = "grid";
-  fundoEscuro.style.display = "block";
-
-    setTimeout(() => {
-      $(".diceAppear").css("transform", "rotate(360deg)");
-      $(".diceAppear").css("-webkit-transform", "rotate(360deg)");
-      sound();
-    }, 1000);
-
-    setTimeout(() => {
-      $(".diceAppear").css("transform", "rotate(0deg)");
-      $(".diceAppear").css("-webkit-transform", "rotate(0deg)");
-    }, 5000);
-
-    setTimeout(() => {
-    number.style.display = "block";
-    number.innerHTML = aleatorio;
-    }, 1000 * 3);
-
-    setTimeout(() => {
-    resultado.style.display = "none";
-    number.style.display = "none";
-    fundoEscuro.style.display = "none";
-    }, 1000 * 8);
-});
-
-$("#forcaA").click(function rollAttribute(vezes) {
-  var vezes = document.getElementById("times2").value;
-    if(vezes == "" || vezes == 0){vezes = 1}
-  numeros=[]
-  for (var i = 0; i < vezes; i++) {
-    var numero = novoNumero(i);
-    numeros.push(numero);
-  }
-  var soma = (accumulator, curr) => accumulator + curr;
-  var atributoValor = document.getElementById("forca")
-  var total = numeros.reduce(soma) + Number(atributoValor.value)
-
-  var aleatorio = numeros.length + "d20" + " = " + numeros.reduce(soma) + " + " + atributoValor.value + " = " + total;
-  if(Number(atributoValor.value) == ""){aleatorio = total}
-  if(Number(atributoValor.value) == "" && vezes >= 2){aleatorio = numeros.length + "d20" + " = " + total}
-
-  resultado.style.display = "grid";
-  fundoEscuro.style.display = "block";
-
-    setTimeout(() => {
-      $(".diceAppear").css("transform", "rotate(360deg)");
-      $(".diceAppear").css("-webkit-transform", "rotate(360deg)");
-      sound();
-    }, 1000);
-
-    setTimeout(() => {
-      $(".diceAppear").css("transform", "rotate(0deg)");
-      $(".diceAppear").css("-webkit-transform", "rotate(0deg)");
-    }, 5000);
-
-    setTimeout(() => {
-    number.style.display = "block";
-    number.innerHTML = aleatorio;
-    }, 1000 * 3);
-
-    setTimeout(() => {
-    resultado.style.display = "none";
-    number.style.display = "none";
-    fundoEscuro.style.display = "none";
-    }, 1000 * 8);
-});
-
-$("#vigorA").click(function rollAttribute(vezes) {
-  var vezes = document.getElementById("times3").value;
-    if(vezes == "" || vezes == 0){vezes = 1}
-  numeros=[]
-  for (var i = 0; i < vezes; i++) {
-    var numero = novoNumero(i);
-    numeros.push(numero);
-  }
-  var soma = (accumulator, curr) => accumulator + curr;
-  var atributoValor = document.getElementById("vigor")
-  var total = numeros.reduce(soma) + Number(atributoValor.value)
-
-  var aleatorio = numeros.length + "d20" + " = " + numeros.reduce(soma) + " + " + atributoValor.value + " = " + total;
-  if(Number(atributoValor.value) == ""){aleatorio = total}
-  if(Number(atributoValor.value) == "" && vezes >= 2){aleatorio = numeros.length + "d20" + " = " + total}
-
-  resultado.style.display = "grid";
-  fundoEscuro.style.display = "block";
-
-    setTimeout(() => {
-      $(".diceAppear").css("transform", "rotate(360deg)");
-      $(".diceAppear").css("-webkit-transform", "rotate(360deg)");
-      sound();
-    }, 1000);
-
-    setTimeout(() => {
-      $(".diceAppear").css("transform", "rotate(0deg)");
-      $(".diceAppear").css("-webkit-transform", "rotate(0deg)");
-    }, 5000);
-
-    setTimeout(() => {
-    number.style.display = "block";
-    number.innerHTML = aleatorio;
-    }, 1000 * 3);
-
-    setTimeout(() => {
-    resultado.style.display = "none";
-    number.style.display = "none";
-    fundoEscuro.style.display = "none";
-    }, 1000 * 8);
-});
-
-$("#presencaA").click(function rollAttribute(vezes) {
-  var vezes = document.getElementById("times4").value;
-    if(vezes == "" || vezes == 0){vezes = 1}
-  numeros=[]
-  for (var i = 0; i < vezes; i++) {
-    var numero = novoNumero(i);
-    numeros.push(numero);
-  }
-  var soma = (accumulator, curr) => accumulator + curr;
-  var atributoValor = document.getElementById("presenca")
-  var total = numeros.reduce(soma) + Number(atributoValor.value)
-
-  var aleatorio = numeros.length + "d20" + " = " + numeros.reduce(soma) + " + " + atributoValor.value + " = " + total;
-  if(Number(atributoValor.value) == ""){aleatorio = total}
-  if(Number(atributoValor.value) == "" && vezes >= 2){aleatorio = numeros.length + "d20" + " = " + total}
-
-  resultado.style.display = "grid";
-  fundoEscuro.style.display = "block";
-
-    setTimeout(() => {
-      $(".diceAppear").css("transform", "rotate(360deg)");
-      $(".diceAppear").css("-webkit-transform", "rotate(360deg)");
-      sound();
-    }, 1000);
-
-    setTimeout(() => {
-      $(".diceAppear").css("transform", "rotate(0deg)");
-      $(".diceAppear").css("-webkit-transform", "rotate(0deg)");
-    }, 5000);
-
-    setTimeout(() => {
-    number.style.display = "block";
-    number.innerHTML = aleatorio;
-    }, 1000 * 3);
-
-    setTimeout(() => {
-    resultado.style.display = "none";
-    number.style.display = "none";
-    fundoEscuro.style.display = "none";
-    }, 1000 * 8);
-});
-
-$("#intelectoA").click(function rollAttribute(vezes) {
-  var vezes = document.getElementById("times5").value;
-    if(vezes == "" || vezes == 0){vezes = 1}
-  numeros=[]
-  for (var i = 0; i < vezes; i++) {
-    var numero = novoNumero(i);
-    numeros.push(numero);
-  }
-  var soma = (accumulator, curr) => accumulator + curr;
-  var atributoValor = document.getElementById("intelecto")
-  var total = numeros.reduce(soma) + Number(atributoValor.value)
-
-  var aleatorio = numeros.length + "d20" + " = " + numeros.reduce(soma) + " + " + atributoValor.value + " = " + total;
-  if(Number(atributoValor.value) == ""){aleatorio = total}
-  if(Number(atributoValor.value) == "" && vezes >= 2){aleatorio = numeros.length + "d20" + " = " + total}
-
-  resultado.style.display = "grid";
-  fundoEscuro.style.display = "block";
-
-    setTimeout(() => {
-      $(".diceAppear").css("transform", "rotate(360deg)");
-      $(".diceAppear").css("-webkit-transform", "rotate(360deg)");
-      sound();
-    }, 1000);
-
-    setTimeout(() => {
-      $(".diceAppear").css("transform", "rotate(0deg)");
-      $(".diceAppear").css("-webkit-transform", "rotate(0deg)");
-    }, 5000);
-
-    setTimeout(() => {
-    number.style.display = "block";
-    number.innerHTML = aleatorio;
-    }, 1000 * 3);
-
-    setTimeout(() => {
-    resultado.style.display = "none";
-    number.style.display = "none";
-    fundoEscuro.style.display = "none";
-    }, 1000 * 8);
-});
- */
 /////////////rolarAtributos//////////////////////
 function soma() {
   $("#input-3").val(Number($("#input-1").val()) + Number($("#input-2").val()))

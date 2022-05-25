@@ -2,40 +2,40 @@
 <html lang="pt-BR">
 
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="imagens/ordem.png" type="image/x-icon">
-<title>Ficha de Personagem</title>
-<link rel="stylesheet" href="estilos/estilo.css">
-<link rel="stylesheet" href="estilos/css.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="imagens/ordem.png" type="image/x-icon">
+  <title>Ficha de Personagem</title>
+  <link rel="stylesheet" href="estilos/estilo.css">
+  <link rel="stylesheet" href="estilos/css.css">
 </head>
 
 <body>
-<!-- início do preloader -->
-<div id="preloader">
-<div class="inner">
-    <img src="imagens/ordem.png" style="filter: invert(1);">
-</div>
-</div>
-<!-- fim do preloader -->
-<audio id='audio' src="somDado.mp3" type=".mp3" preload></audio>
-<div class='fundoEscuro' id='fundoEscuro'></div>
-<div class='add-imagem' id="add-imagem">
-<label for="imgadd">Enviar Foto</label>
-<input type="file" name="imgadd" id="imgadd" accept="image/*">
-</div>
-<div class='resultado' id='resultado'>
-<img class="diceAppear" src="dado.png" alt="Dado">
-<p id='number' class='number'></p>
-<p id='result' class='result'></p>
-</div>
-<div class='logo'><img class='ordem' src='imagens/ordem.png'>
-<h1>Ficha De Personagem</h1>
-</div>
-<div class='container'>
-<div class='details border'>
-  <!-- <div class="rollDices">
+  <!-- início do preloader -->
+  <div id="preloader">
+    <div class="inner">
+      <img src="imagens/ordem.png" style="filter: invert(1);">
+    </div>
+  </div>
+  <!-- fim do preloader -->
+  <audio id='audio' src="somDado.mp3" type=".mp3" preload></audio>
+  <div class='fundoEscuro' id='fundoEscuro'></div>
+  <div class='add-imagem' id="add-imagem">
+    <label for="imgadd">Enviar Foto</label>
+    <input type="file" name="imgadd" id="imgadd" accept="image/*">
+  </div>
+  <div class='resultado' id='resultado'>
+    <img class="diceAppear" src="imagens/20-sided-dice.png" alt="Dado">
+    <p id='number' class='number'></p>
+    <p id='result' class='result'></p>
+  </div>
+  <div class='logo'><img class='ordem' src='imagens/ordem.png'>
+    <h1>Ficha De Personagem</h1>
+  </div>
+  <div class='container'>
+    <div class='details border'>
+      <!-- <div class="rollDices">
     <div class="rDices">
       <ul>Dados<div class="lista">
           <li>
@@ -67,432 +67,476 @@
       </ul>
     </div>
   </div> -->
-  <h2>DADOS DO AGENTE</h2>
-  <hr>
-  <div class='divInputs'>
-    <h4>Nome</h4>
-    <input class='inputS' id='player'></input>
-    <h4>Jogador</h4>
-    <input class='inputS' id='personagem'></input>
-      <h4>Classe, Trilha e Patente</h4>
-    <div class="seletores">
-      <select name="classe" id="classe">
-        <option value="Combatente">Combatente</option>
-        <option value="Especialista">Especialista</option>
-        <option value="Ocultista">Ocultista</option>
-        <option value="-" selected>-</option>
-      </select>
-      <select name="trilha" id="trilha">
-        <option value="Artista ">Artista</option>
-        <option value="Atirador de Elite">Atirador de Elite</option>
-        <option value="Comandante">Comandante</option>
-        <option value="de Combate">de Combate</option>
-        <option value="Duelista">Duelista</option>
-        <option value="Infiltrador">Infiltrador</option>
-        <option value="Intuitivo">Intuitivo</option>
-        <option value="Sagaz">Sagaz</option>
-        <option value="Socorrista">Socorrista</option>
-        <option value="-" selected>-</option>
-      </select>
-      <select name="patente" id="patente" style="width: 98px;">
-        <option value="Recruta">Recruta</option>
-        <option value="Agente">Agente</option>
-        <option value="Operador">Operador</option>
-        <option value="Veterano">Veterano</option>
-        <option value="Elite">Elite</option>
-        <option value="-" selected>-</option>
-      </select>
-    </div>
-    <h4>Origem</h4>
-    <div class="seletores">
-      <select name="origem" id="origem">
-        <option value="Acadêmico">Acadêmico</option>
-        <option value="Atleta">Atleta</option>
-        <option value="Exorcista">Exorcista</option>
-        <option value="Mercenário">Mercenário</option>
-        <option value="Profissional da Saúde">Profissional da Saúde</option>
-        <option value="T.I">T.I</option>
-        <option value="-" selected>-</option>
-      </select>
-    </div>
-    <h4>Afinidade</h4>
-    <div class="seletores">
-      <select name="afinidade" id="afinidade">
-        <option value="Conhecimento">Conhecimento</option>
-        <option value="Energia">Energia</option>
-        <option value="Morte">Morte</option>
-        <option value="Sangue">Sangue</option>
-        <option value="-" selected>-</option>
-      </select>
-    </div>
-    <h4>Idade</h4>
-    <input class='inputS' type='number' id='idade'></input>
-    <h4>Local de Residência</h4>
-    <input class='inputS' id='residencePlace'></input>
-  </div>
-  <div style="text-align:center; margin-bottom: 10px;">
-    <t id="t" style="cursor:pointer; color: #1d1d1d;">Hide Checkbox |</t>
-    <t id="i" style="cursor:pointer; color: #1d1d1d;">Show Checkbox</t></div>
-</div>
-<div class='character'>
-  <div class='characterHeader'>
-    <img class="characterPhoto" src="character.png" id="imgPhoto" alt="Foto" onclick="imgchange()">
-    <img class="dice" src="imagens/20-sided-dice.png" alt="Dado" onclick='D20()'>
-  </div>
-  <div class='bars'>
-    <h4>Vida</h4>
-    <div class='bar'>
-      <div class='lifeBar'>
-        <div id="lifeModal" class="modal with-input" style="display: block;">
-          <div class="modal-content">
-            <form class="formModal" id="changeLife">
-              <input name="current" id="lifeCurrent" min="0" placeholder='Atual' autocomplete='off'>|
-              <input name="max" id="lifeMax" min="0" placeholder='Máxima' autocomplete='off'>
-              <input type="submit" class='submitLife' onclick="saveBars()" value="►">
-            </form>
-          </div>
+      <h2>DADOS DO AGENTE</h2>
+      <hr>
+      <div class='divInputs'>
+        <h4>Nome</h4>
+        <input class='inputS' id='player'></input>
+        <h4>Jogador</h4>
+        <input class='inputS' id='personagem'></input>
+        <h4>Classe, Trilha e Patente</h4>
+        <div class="seletores">
+          <select name="classe" id="classe">
+            <option value="Combatente">Combatente</option>
+            <option value="Especialista">Especialista</option>
+            <option value="Ocultista">Ocultista</option>
+            <option value="-" selected>-</option>
+          </select>
+          <select name="trilha" id="trilha">
+            <option value="Artista ">Artista</option>
+            <option value="Atirador de Elite">Atirador de Elite</option>
+            <option value="Comandante">Comandante</option>
+            <option value="de Combate">de Combate</option>
+            <option value="Duelista">Duelista</option>
+            <option value="Infiltrador">Infiltrador</option>
+            <option value="Intuitivo">Intuitivo</option>
+            <option value="Sagaz">Sagaz</option>
+            <option value="Socorrista">Socorrista</option>
+            <option value="-" selected>-</option>
+          </select>
+          <select name="patente" id="patente" style="width: 98px;">
+            <option value="Recruta">Recruta</option>
+            <option value="Agente">Agente</option>
+            <option value="Operador">Operador</option>
+            <option value="Veterano">Veterano</option>
+            <option value="Elite">Elite</option>
+            <option value="-" selected>-</option>
+          </select>
         </div>
+        <h4>Origem</h4>
+        <div class="seletores">
+          <select name="origem" id="origem">
+            <option value="Acadêmico">Acadêmico</option>
+            <option value="Atleta">Atleta</option>
+            <option value="Exorcista">Exorcista</option>
+            <option value="Mercenário">Mercenário</option>
+            <option value="Profissional da Saúde">Profissional da Saúde</option>
+            <option value="T.I">T.I</option>
+            <option value="-" selected>-</option>
+          </select>
+        </div>
+        <h4>Afinidade</h4>
+        <div class="seletores">
+          <select name="afinidade" id="afinidade">
+            <option value="Conhecimento">Conhecimento</option>
+            <option value="Energia">Energia</option>
+            <option value="Morte">Morte</option>
+            <option value="Sangue">Sangue</option>
+            <option value="-" selected>-</option>
+          </select>
+        </div>
+        <h4>Idade</h4>
+        <input class='inputS' type='number' id='idade'></input>
+        <h4>Local de Residência</h4>
+        <input class='inputS' id='residencePlace'></input>
       </div>
     </div>
-    <div class="checkboxs">
-      <form action="">
-        <input type="checkbox" id="lesion" class="checkS"name="lesion" value="lesion">
-        <label for="lesion">Lesão grave</label>
-        <input type="checkbox" id="injury" class="checkS"name="injury" value="injury">
-        <label for="injury"> Inconciente</label>
-        <input type="checkbox" id="dying" class="checkS" name="dying" value="dying">
-        <label for="dying" style="margin-right: 0;"> Morrendo</label>
-      </form>
-    </div>
-    <h4 class='h4Sanity'>Sanidade<img class="sanityDice" src="imagens/20-sided-dice.png" onclick="sanityDice()" alt="Dado"></h4>
-    <div class="sanity">
-      <div class="contentSanityBar">
-        <div class="sanityBar">
-          <div id="sanityModal" class="modal with-input">
-            <div class="modal-content">
-              <form class="formModal" id="changeSanity">
-                <input name="sanityCurrent" id="sanityCurrent" min="0" placeholder='Atual' autocomplete='off'>|
-                <input name="sanityMax" id="sanityMax" min="0" placeholder='Máxima' autocomplete='off'>
-                <input type="submit" class='submitLife' onclick="saveBars()" value="►">
-              </form>
+    <div class='character'>
+      <div class='characterHeader'>
+        <img class="characterPhoto" src="character.png" id="imgPhoto" alt="Foto" onclick="imgchange()">
+        <img class="dice" src="imagens/20-sided-dice.png" alt="Dado" onclick='D20()'>
+      </div>
+      <div class='bars'>
+        <h4>Vida</h4>
+        <div class='bar'>
+          <div class='lifeBar'>
+            <div id="lifeModal" class="modal with-input" style="display: block;">
+              <div class="modal-content">
+                <form class="formModal" id="changeLife">
+                  <input name="current" id="lifeCurrent" min="0" placeholder='Atual' autocomplete='off'>|
+                  <input name="max" id="lifeMax" min="0" placeholder='Máxima' autocomplete='off'>
+                  <input type="submit" class='submitLife' onclick="saveBars()" value="►">
+                </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="checkboxs">
-      <input type="checkbox" id="traumatized" name="traumatized" value="traumatized">
-      <label for="traumatized"> Traumatizado</label>
-      <input type="checkbox" id="crazed" name="crazed" value="crazed">
-      <label for="crazed"> Enlouquecido</label>
-    </div>
-    <!-- <div class="rolagemSanity">
+        <div class="checkboxs">
+          <form action="">
+            <input type="checkbox" id="lesion" class="checkS" name="lesion" value="lesion">
+            <label for="lesion">Lesão grave</label>
+            <input type="checkbox" id="injury" class="checkS" name="injury" value="injury">
+            <label for="injury"> Inconciente</label>
+            <input type="checkbox" id="dying" class="checkS" name="dying" value="dying">
+            <label for="dying" style="margin-right: 0;"> Morrendo</label>
+          </form>
+        </div>
+        <h4 class='h4Sanity'>Sanidade
+          <!-- <img class="sanityDice" src="imagens/20-sided-dice.png" onclick="sanityDice()" alt="Dado"> -->
+        </h4>
+        <div class="sanity">
+          <div class="contentSanityBar">
+            <div class="sanityBar">
+              <div id="sanityModal" class="modal with-input">
+                <div class="modal-content">
+                  <form class="formModal" id="changeSanity">
+                    <input name="sanityCurrent" id="sanityCurrent" min="0" placeholder='Atual' autocomplete='off'>|
+                    <input name="sanityMax" id="sanityMax" min="0" placeholder='Máxima' autocomplete='off'>
+                    <input type="submit" class='submitLife' onclick="saveBars()" value="►">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="checkboxs">
+          <input type="checkbox" id="traumatized" name="traumatized" value="traumatized">
+          <label for="traumatized"> Traumatizado</label>
+          <input type="checkbox" id="crazed" name="crazed" value="crazed">
+          <label for="crazed"> Enlouquecido</label>
+        </div>
+        <!-- <div class="rolagemSanity">
       <p>Multiplicador: <input type="text" name="increment" id="increment"></p>
       <p></p>
     </div> -->
-    <div class="ocultismo">
-      <h4>Pts Esforço</h4>
-      <div class="contentOcultBar">
-        <div class="ocultBar">
-          <div id="ocultModal" class="modal with-input">
-            <div class="modal-content">
-              <form class="formModal" id="changeOcult">
-                <input name="ocultCurrent" id="ocultCurrent" min="0" placeholder='Atual' autocomplete='off'>|
-                <input name="ocultMax" id="ocultMax" min="0" placeholder='Maxima' autocomplete='off'>
-                <input type="submit" class='submitLife' onclick="saveBars()" value="►">
-              </form>
+        <div class="ocultismo">
+          <h4>Pts Esforço</h4>
+          <div class="contentOcultBar">
+            <div class="ocultBar">
+              <div id="ocultModal" class="modal with-input">
+                <div class="modal-content">
+                  <form class="formModal" id="changeOcult">
+                    <input name="ocultCurrent" id="ocultCurrent" min="0" placeholder='Atual' autocomplete='off'>|
+                    <input name="ocultMax" id="ocultMax" min="0" placeholder='Maxima' autocomplete='off'>
+                    <input type="submit" class='submitLife' onclick="saveBars()" value="►">
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="extra">
-    <div class="damage">
-      <p>Gastos PE</p>
-      <input type="number" name="damage" id="damage" >
-    </div>
-    <div class="body">
-      <p>Deslocamento</p>
-      <input type="number" name="body" id="body">
-    </div>
-    <div class="exposure">
-      <p>NEX</p>
-      <input type="text" name="EP" id="EP">
-    </div>
-  </div>
-<!--   <div class="resistences-defence">
-    <div class="resistences">
-      <div>
-      <h4>Resistencias a Dano</h4>
-      <div class="fisic-ammo">
-        <h4>Física</h4>
-        <p><input type="number"></p>
-        <h4>Balística</h4>
-        <p><input type="number"></p>
+      <div class="extra">
+        <div class="damage">
+          <p>Gastos PE</p>
+          <input type="number" name="damage" id="damage">
         </div>
-      <h4>Resistencia a insanidade</h4>
+        <div class="body">
+          <p>Deslocamento</p>
+          <input type="number" name="body" id="body">
+        </div>
+        <div class="exposure">
+          <p>NEX</p>
+          <input type="text" name="EP" id="EP">
+        </div>
       </div>
+      <div class="next-page">
+        <a href="index_2.html">Proxima Página</a>
+      </div>
+    </div>
+    <div class="attributes border">
+      <h2 class="grid-title">ATRIBUTOS</h2>
+      <hr>
+      <div class="attributesList">
+        <div class="attribute">
+
+          <a id="agilityA">
+            <img class="attributeDice" src="imagens/20-sided-dice.png" alt="Dado">
+          </a>
+
+          <h3>Agilidade</h3>
+          <h5>Modificador</h5>
+          <input type="number" id="agilidade">
+
+        </div>
+        <div class="attribute">
+
+          <a id="forcaA">
+            <img class="attributeDice" src="imagens/20-sided-dice.png" alt="Dado">
+          </a>
+
+          <h3>Força</h3>
+          <h5>Modificador</h5>
+          <input type="number" id="forca">
+
+        </div>
+
+        <div class="attribute">
+          <a id="vigorA">
+            <img class="attributeDice" src="imagens/20-sided-dice.png" alt="Dado">
+          </a>
+
+          <h3>Vigor</h3>
+          <h5>Modificador</h5>
+          <input type="number" id="vigor">
+
+        </div>
+
+        <div class="attribute">
+          <a id="presencaA">
+            <img class="attributeDice" src="imagens/20-sided-dice.png" alt="Dado">
+          </a>
+
+          <h3>Presença</h3>
+          <h5>Modificador</h5>
+          <input type="number" id="presenca">
+
+        </div>
+
+        <div class="attribute">
+          <a id="intelectoA">
+            <img class="attributeDice" src="imagens/20-sided-dice.png" alt="Dado">
+          </a>
+
+          <h3>Intelecto</h3>
+          <h5>Modificador</h5>
+          <input type="number" id="intelecto">
+        </div>
+      </div>
+    </div>
+    <div class="expertise border">
+      <h2 class="grid-title">PERICIAS</h2>
+      <h6>* = Só treinadas | " = Penalidade de Carga</h6>
+      <hr>
+      <div class="expertiseList">
+        <div class="grid-table">
+          <table>
+            <tr>
+              <th>
+                <h5>Atributos</h5>
+              </th>
+              <th>
+                <h5>Bonus</h5>
+              </th>
+              <th>
+                <h5>Outros</h5>
+              </th>
+              <th>
+                <h5>Total</h5>
+              </th>
+            </tr>
+            <tr>
+              <td>Atletismo" - FOR</td>
+              <td><input type="number" id="input-1" data-first></td>
+              <td><input type="number" id="input-2" class="outros"></td>
+              <td><input type="number" id="input-3" disabled></td>
+            </tr>
+            <tr>
+              <td>Atualidade - INT</td>
+              <td><input type="number" id="input-4" data-first></td>
+              <td><input type="number" id="input-5" class="outros"></td>
+              <td><input type="number" id="input-6" disabled></td>
+            </tr>
+            <tr>
+              <td>Ciência - INT</td>
+              <td><input type="number" id="input-7" data-first></td>
+              <td><input type="number" id="input-8" class="outros"></td>
+              <td><input type="number" id="input-9" disabled></td>
+            </tr>
+            <tr>
+              <td>Diplomacia - PRE</td>
+              <td><input type="number" id="input-10" data-first></td>
+              <td><input type="number" id="input-11" class="outros"></td>
+              <td><input type="number" id="input-12" disabled></td>
+            </tr>
+            <tr>
+              <td>Enganação - PRE</td>
+              <td><input type="number" id="input-13" data-first></td>
+              <td><input type="number" id="input-14" class="outros"></td>
+              <td><input type="number" id="input-15" disabled></td>
+            </tr>
+            <tr>
+              <td>Fortitude - VIG</td>
+              <td><input type="number" id="input-16" data-first></td>
+              <td><input type="number" id="input-17" class="outros"></td>
+              <td><input type="number" id="input-18" disabled></td>
+            </tr>
+            <tr>
+              <td>Furtividade" - AGI</td>
+              <td><input type="number" id="input-19" data-first></td>
+              <td><input type="number" id="input-20" class="outros"></td>
+              <td><input type="number" id="input-21" disabled></td>
+
+            </tr>
+            <tr>
+              <td>Intuição - PRE</td>
+              <td><input type="number" id="input-22" data-first></td>
+              <td><input type="number" id="input-23" class="outros"></td>
+              <td><input type="number" id="input-24" disabled></td>
+
+            </tr>
+            <tr>
+              <td>Investigação - INT</td>
+              <td><input type="number" id="input-25" data-first></td>
+              <td><input type="number" id="input-26" class="outros"></td>
+              <td><input type="number" id="input-27" disabled></td>
+
+            </tr>
+            <tr>
+              <td>Luta - FOR ou AGI</td>
+              <td><input type="number" id="input-28" data-first></td>
+              <td><input type="number" id="input-29" class="outros"></td>
+              <td><input type="number" id="input-30" disabled></td>
+
+            </tr>
+            <tr>
+              <td>Medicina* - INT</td>
+              <td><input type="number" id="input-31" data-first></td>
+              <td><input type="number" id="input-32" class="outros"></td>
+              <td><input type="number" id="input-33" disabled></td>
+
+            </tr>
+            <tr>
+              <td>Ocultismo* - INT</td>
+              <td><input type="number" id="input-34" data-first></td>
+              <td><input type="number" id="input-35" class="outros"></td>
+              <td><input type="number" id="input-36" disabled></td>
+
+            </tr>
+            <tr>
+              <td>Percepção - INT</td>
+              <td><input type="number" id="input-37" data-first></td>
+              <td><input type="number" id="input-38" class="outros"></td>
+              <td><input type="number" id="input-39" disabled></td>
+
+            </tr>
+            <tr>
+              <td>Pilotagem* - INT</td>
+              <td><input type="number" id="input-40" data-first></td>
+              <td><input type="number" id="input-41" class="outros"></td>
+              <td><input type="number" id="input-42" disabled></td>
+
+            </tr>
+            <tr>
+              <td>Pontaria - AGI</td>
+              <td><input type="number" id="input-43" data-first></td>
+              <td><input type="number" id="input-44" class="outros"></td>
+              <td><input type="number" id="input-45" disabled></td>
+
+            </tr>
+            <tr>
+              <td>Prestidigitação" - AGI</td>
+              <td><input type="number" id="input-46" data-first></td>
+              <td><input type="number" id="input-47" class="outros"></td>
+              <td><input type="number" id="input-48" disabled></td>
+
+            </tr>
+            <tr>
+              <td>Profissão*</td>
+              <td><input type="number" id="input-49" data-first></td>
+              <td><input type="number" id="input-50" class="outros"></td>
+              <td><input type="number" id="input-51" disabled></td>
+
+            </tr>
+            <tr>
+              <td>Reflexos" - AGI</td>
+              <td><input type="number" id="input-52" data-first></td>
+              <td><input type="number" id="input-53" class="outros"></td>
+              <td><input type="number" id="input-54" disabled></td>
+
+            </tr>
+            <tr>
+              <td>Religião - INT</td>
+              <td><input type="number" id="input-55" data-first></td>
+              <td><input type="number" id="input-56" class="outros" disabled></td>
+              <td><input type="number" id="input-57" disabled></td>
+
+            </tr>
+            <tr>
+              <td>Tática* - INT</td>
+              <td><input type="number" id="input-58" data-first></td>
+              <td><input type="number" id="input-59" class="outros"></td>
+              <td><input type="number" id="input-60" disabled></td>
+
+            </tr>
+            <tr>
+              <td>Tecnologia* - INT</td>
+              <td><input type="number" id="input-61" data-first></td>
+              <td><input type="number" id="input-62" class="outros"></td>
+              <td><input type="number" id="input-63" disabled></td>
+
+            </tr>
+            <tr>
+              <td>Vontade - PRE</td>
+              <td><input type="number" id="input-64" data-first></td>
+              <td><input type="number" id="input-65" class="outros"></td>
+              <td><input type="number" id="input-66" disabled></td>
+
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="notes border">
+      <h2 class="grid-title">NOTAS</h2>
+      <hr>
+      <textarea name="" id="notes-area" cols="30" rows="10" ></textarea>
+      <h2 class="grid-title">PROFICIÊNCIAS</h2>
+      <hr>
+      <textarea name="" id="notes-area" cols="30" rows="10" ></textarea>
+    </div>
+    <div class="resistence border">
+      <h2 class="grid-title">RESISTENCIA A DANO</h2>
+      <hr>
+      <div class="table-resistence">
+        <table>
+          <tr>
+            <td>Físico</td>
+            <td><input type="text"></td>
+            <td>Balístico</td>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <td>Morte</td>
+            <td><input type="text"></td>
+            <td>Conhecimento</td>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <td>Energia</td>
+            <td><input type="text"></td>
+            <td>Sangue</td>
+            <td><input type="text"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="defence border">
+      <h2 class="grid-title">DEFESAS</h2>
+      <hr>
+      <div class="table-defence">
+        <table>
+          <tr>
+            <th>Passiva</th>
+            <th>Bloqueio</th>
+            <th>Esquiva</th>
+          </tr>
+          <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <th>Armadura</th>
+            <th>Defesa</th>
+            <th>Penalidade</th>
+          </tr>
+          <tr>
+            <td>Armadura Leve</td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <td>Armadura Pesada</td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
       
-    </div>
-    <div class="defences">
-      <h4>Defesas</h4>
-      <p>Passiva</p>
-      <input type="number">
-      <p>Bloqueio</p>
-      <input type="number">
-      <p>Esquiva</p>
-      <input type="number">
-
-    </div>
-  </div> -->
-</div>
-<div class="attributes border">
-  <h2 class="grid-title">ATRIBUTOS</h2>
-  <hr>
-  <div class="attributesList">
-    <div class="attribute">
-
-      <a id="agilityA">
-      <img class="attributeDice" src="imagens/20-sided-dice.png" alt="Dado">
-    </a>
-
-    <h3>Agilidade</h3>
-    <h5>Modificador</h5>
-    <input type="number" id="agilidade">
-    <!-- <h5>Rolar</h5>
-    <input type="number" id="times1" value="1"> -->
   </div>
-    <div class="attribute">
-
-      <a id="forcaA">
-      <img class="attributeDice" src="imagens/20-sided-dice.png" alt="Dado">
-    </a>
-
-    <h3>Força</h3>
-    <h5>Modificador</h5>
-    <input type="number"  id="forca">
-    <!-- <h5>Rolar</h5>
-    <input type="number" id="times2" value="1"> -->
-  </div>
-
-    <div class="attribute">
-      <a id="vigorA">
-      <img class="attributeDice" src="imagens/20-sided-dice.png" alt="Dado">
-    </a>
-
-    <h3>Vigor</h3>
-    <h5>Modificador</h5>
-    <input type="number"  id="vigor">
-    <!-- <h5>Rolar</h5>
-    <input type="number" id="times3" value="1"> -->
-  </div>
-
-    <div class="attribute">
-      <a id="presencaA">
-      <img class="attributeDice" src="imagens/20-sided-dice.png" alt="Dado">
-    </a>
-
-    <h3>Presença</h3>
-    <h5>Modificador</h5>
-    <input type="number"  id="presenca">
-    <!-- <h5>Rolar</h5>
-    <input type="number" id="times4" value="1"> -->
-  </div>
-
-    <div class="attribute">
-      <a id="intelectoA">
-      <img class="attributeDice" src="imagens/20-sided-dice.png" alt="Dado">
-    </a>
-
-    <h3>Intelecto</h3>
-    <h5>Modificador</h5>
-    <input type="number"  id="intelecto">
-    <!-- <h5>Rolar</h5>
-    <input type="number" id="times5" value="1"> -->
-  </div>
-
-  </div>
-</div>
-<div class="expertise border">
-  <h2 class="grid-title">PERICIAS</h2>
-  <h6>* = Só treinadas | " = Penalidade de Carga</h6>
-  <hr>
-  <div class="expertiseList"> 
-    <div class="grid-table">
-    <table>
-      <tr>
-        <td><h5>Atributos</h5></td>
-        <td><h5>Bonus</h5></td>
-        <td><h5>Outros</h5></td>
-        <td><h5>Total</h5></td>
-<!--         <td><h5>T</h5></td>
-        <td><h5>C</h5></td>
-        <td><h5>E</h5></td> -->
-      </tr>
-      <tr>
-        <td>Atletismo" - FOR</td>
-        <td><input type="number" id="input-1" data-first></td>
-        <td><input type="number" id="input-2" class="outros"></td>
-        <td><input type="number" id="input-3" disabled></td>
-      </tr>
-      <tr>
-        <td>Atualidade - INT</td>
-        <td><input type="number" id="input-4" data-first></td>
-        <td><input type="number" id="input-5" class="outros"></td>
-        <td><input type="number" id="input-6"disabled></td>
-      </tr>
-      <tr>
-        <td>Ciência - INT</td>
-        <td><input type="number" id="input-7" data-first></td>
-        <td><input type="number" id="input-8" class="outros"></td>
-        <td><input type="number" id="input-9"disabled></td>
-      </tr>
-      <tr>
-        <td>Diplomacia - PRE</td>
-        <td><input type="number" id="input-10" data-first></td>
-        <td><input type="number" id="input-11" class="outros"></td>
-        <td><input type="number" id="input-12"disabled></td>
-      </tr>
-      <tr>
-        <td>Enganação - PRE</td>
-        <td><input type="number" id="input-13" data-first></td>
-        <td><input type="number" id="input-14" class="outros"></td>
-        <td><input type="number" id="input-15"disabled></td>
-      </tr>
-      <tr>
-        <td>Fortitude - VIG</td>
-        <td><input type="number" id="input-16" data-first></td>
-        <td><input type="number" id="input-17" class="outros"></td>
-        <td><input type="number" id="input-18"disabled></td>
-      </tr>
-      <tr>
-        <td>Furtividade" - AGI</td>
-        <td><input type="number" id="input-19"data-first></td>
-        <td><input type="number" id="input-20" class="outros"></td>
-        <td><input type="number" id="input-21"disabled></td>
-
-      </tr>
-      <tr>
-        <td>Intuição - PRE</td>
-        <td><input type="number" id="input-22" data-first></td>
-        <td><input type="number" id="input-23" class="outros"></td>
-        <td><input type="number" id="input-24"disabled></td>
-
-      </tr>
-      <tr>
-        <td>Investigação - INT</td>
-        <td><input type="number" id="input-25"data-first></td>
-        <td><input type="number" id="input-26" class="outros"></td>
-        <td><input type="number" id="input-27"disabled></td>
-
-      </tr>
-      <tr>
-        <td>Luta - FOR ou AGI</td>
-        <td><input type="number" id="input-28"data-first></td>
-        <td><input type="number" id="input-29" class="outros"></td>
-        <td><input type="number" id="input-30"disabled></td>
-
-      </tr>
-      <tr>
-        <td>Medicina* - INT</td>
-        <td><input type="number" id="input-31"data-first></td>
-        <td><input type="number" id="input-32" class="outros"></td>
-        <td><input type="number" id="input-33"disabled></td>
-
-      </tr>
-      <tr>
-        <td>Ocultismo* - INT</td>
-        <td><input type="number" id="input-34"data-first></td>
-        <td><input type="number" id="input-35" class="outros"></td>
-        <td><input type="number" id="input-36"disabled></td>
-
-      </tr>
-      <tr>
-        <td>Percepção - INT</td>
-        <td><input type="number" id="input-37"data-first></td>
-        <td><input type="number" id="input-38" class="outros"></td>
-        <td><input type="number" id="input-39"disabled></td>
-
-      </tr>
-      <tr>
-        <td>Pilotagem* - INT</td>
-        <td><input type="number" id="input-40"data-first></td>
-        <td><input type="number" id="input-41" class="outros"></td>
-        <td><input type="number" id="input-42"disabled></td>
-
-      </tr>
-      <tr>
-        <td>Pontaria - AGI</td>
-        <td><input type="number" id="input-43"data-first></td>
-        <td><input type="number" id="input-44" class="outros"></td>
-        <td><input type="number" id="input-45"disabled></td>
-
-      </tr>
-      <tr>
-        <td>Prestidigitação" - AGI</td>
-        <td><input type="number" id="input-46"data-first></td>
-        <td><input type="number" id="input-47" class="outros"></td>
-        <td><input type="number" id="input-48"disabled></td>
-
-      </tr>
-      <tr>
-        <td>Profissão*</td>
-        <td><input type="number" id="input-49"data-first></td>
-        <td><input type="number" id="input-50" class="outros"></td>
-        <td><input type="number" id="input-51"disabled></td>
-
-      </tr>
-      <tr>
-        <td>Reflexos" - AGI</td>
-        <td><input type="number" id="input-52"data-first></td>
-        <td><input type="number" id="input-53" class="outros"></td>
-        <td><input type="number" id="input-54"disabled></td>
-
-      </tr>
-      <tr>
-        <td>Religião - INT</td>
-        <td><input type="number" id="input-55"data-first></td>
-        <td><input type="number" id="input-56" class="outros"disabled></td>
-        <td><input type="number" id="input-57"disabled></td>
-
-      </tr>
-      <tr>
-        <td>Tática* - INT</td>
-        <td><input type="number" id="input-58"data-first></td>
-        <td><input type="number" id="input-59" class="outros"></td>
-        <td><input type="number" id="input-60"disabled></td>
-
-      </tr>
-      <tr>
-        <td>Tecnologia* - INT</td>
-        <td><input type="number" id="input-61"data-first></td>
-        <td><input type="number" id="input-62" class="outros"></td>
-        <td><input type="number" id="input-63"disabled></td>
-
-      </tr>
-      <tr>
-        <td>Vontade - PRE</td>
-        <td><input type="number" id="input-64"data-first></td>
-        <td><input type="number" id="input-65" class="outros"></td>
-        <td><input type="number" id="input-66"disabled></td>
-
-      </tr>
-    </table>
-  </div>
-  </div>
-</div>
-<div class="divLS">
-    <!-- <button type="submit" onclick="salvar()" class="save">Guardar Informações</button>
-    <button type="submit" onclick="salvar()" class="save">Carregar Informações</button> -->
+  <!-- <div class="divLS">
+    <button type="submit" onclick="salvar()" class="save">Guardar Informações</button>
+  <button type="submit" onclick="salvar()" class="save">Carregar Informações</button>
     <button type="submit" id="clear" class="save">Limpar Ficha</button>
-  </div>
-</div>
-<footer>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
-<script src="scripts/script.js"></script>
-<script src="scripts/preloader.js"></script>
-</footer>
+  </div> -->
+
+  <footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/preloader.js"></script>
+  </footer>
 </body>
 
 </html>

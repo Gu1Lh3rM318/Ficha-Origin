@@ -64,13 +64,15 @@ body {
 }
 .container {
   display: grid;
+  position: absolute;
   grid-template-areas:
-    "details details details character"
-    "attributes attributes attributes expertise"
-    "combat combat combat combat"
+    "character character details attributes"
+    "character character details attributes"
+    "expertise expertise defence notes"
+    "expertise expertise resistence notes"
     "expertise2 expertise2 expertise2 expertise2";
   grid-gap: 30px;
-  margin-left: auto;
+  margin-left: 5%;
   margin-right: auto;
   width: 70%;
   z-index: 2;
@@ -110,10 +112,10 @@ body {
 }
 
 .logo {
-  display: grid;
-  justify-content: center;
-  margin-top: 3%;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1%;
   margin-left: auto;
   margin-right: auto;
   filter: drop-shadow(1px 1px 6px rgb(2, 2, 2));
@@ -135,6 +137,7 @@ h2 {
   color: #ffffff;
   padding-top: 10px;
   padding-left: 20px;
+  padding-right: 20px;
   padding-bottom: 10px;
   font: 20px "type writer";
   cursor: default;
@@ -161,7 +164,7 @@ h5{
   font: 17px "type writer";
   color: #ffffff;
   text-align: left;
-  margin-top: 5%;
+  margin-top: 9%;
   filter: drop-shadow(1px 1px 6px rgb(2, 2, 2));
 }
 .divInputs {
@@ -199,7 +202,7 @@ input {
 }
 .character {
   grid-area: character;
-  width: 420px;
+  width: 410px;
 }
 .characterHeader {
   display: flex;
@@ -246,26 +249,72 @@ input {
   }
 }
 
-@media only screen and (min-width: 1342px) {
+@media only screen and (min-width: 1100px) {
+  .container {
+      width: 65%;
+      margin-left: 0;
+  }
+}
+
+@media only screen and (min-width: 1292px) {
+  .container {
+      width: 65%;
+      margin-left: 1%;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
   .container {
       width: 62%;
+      margin-left: 2%;
   }
 }
 
 @media only screen and (min-width: 1500px) {
   .container {
-      width: 60%;
+      width: 55%;
+      margin-left: 6%;
   }
 }
+
 @media only screen and (min-width: 1700px) {
   .container {
-      width: 55%;
+      width: 50%;
+      margin-left: 10%;
+  }
+}
+@media only screen and (min-width: 1800px) {
+  .container {
+      width: 45%;
+      margin-left: 13%;
   }
 }
 
 @media only screen and (min-width: 1920px) {
   .container {
       width: 40%;
+      margin-left: 15%;
+  }
+}
+
+@media only screen and (min-width: 2040px) {
+  .container {
+      width: 40%;
+      margin-left: 17%;
+  }
+}
+
+@media only screen and (min-width: 2700px) {
+  .container {
+      width: 30%;
+      margin-left: 25%;
+  }
+}
+
+@media only screen and (min-width: 4000px) {
+  .container {
+      width: 20%;
+      margin-left: 34%;
   }
 }
 .dice {
@@ -653,21 +702,19 @@ background-color: rgb(0, 55, 255);
   font: 17px "type writer";
   filter: drop-shadow(1px 1px 6px rgb(2, 2, 2));
 }
-.extra .damage {
+.damage {
   display: flex;
   flex-direction: column;
   width: 100px;
-}
-#damage{
   margin-left: 1px;
   margin-right: 1px;
 }
-.extra .body {
+.body {
   display: flex;
   flex-direction: column;
   width: 100px;
 }
-.extra .exposure {
+.exposure {
   display: flex;
   flex-direction: column;
   width: 100px;
@@ -813,9 +860,7 @@ hr {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  margin-left: 3px;
-  margin-right: 4px;
-  margin-bottom: 10px;
+  margin:20px;
 }
 .attribute a {
   cursor: pointer;
@@ -852,26 +897,32 @@ hr {
   justify-content: center;
   margin-bottom: 15px;
 }
-table{
+.grid-table table{
   border: 0.1px solid #1d1d1d ;
   text-align: center;
+  border-collapse: collapse;
+  margin: 20px;
 }
-table td{
+.grid-table table td{
   border: 0.1px solid #1d1d1d;
-  padding: 2px;
+  color: rgba(255, 255, 255, 0.774);
+  padding: 2px 5px;
   height: 100%;
 }
-table input{
+.grid-table table tr:hover{
+  background-color: #2d2d2d6e;
+}
+.grid-table table input{
   width: 40px;
   height: 10px;
   border: none;
   color: rgb(153, 153, 153);
   text-align: center;
 }
-table h5{
-  background-color: rgb(83, 83, 83);
-  color: #0a0b0c;
-  font-weight: bold;
+.grid-table table h5{
+  background-color: rgba(83, 83, 83, 0.281);
+  color: white;
+  font-weight: normal;
   font-size: 14px;
   margin: 0px;
   padding: 7px;
@@ -887,66 +938,81 @@ h6{
   margin-top: -10px;
   text-align: center;
 }
-
-.resistences-defence{
-  display: flex;
-  grid-gap: 10px;
+.notes{
+  grid-area: notes;
 }
-.resistences-defence input{
-  width: 65%;
-  height: 30px;
-  text-align: center;
-  font-size: 18px;
-  align-content: center;
+.notes textarea{
+  height:30%;
+  margin: 20px;
+  padding:10px;
+  outline:none;
+  background-color:transparent;
+  color:white;
+  font:17px "type writer";
+  text-align: justify;
+  resize:none;
   border: 0.1px solid #1d1d1d;
   border-radius: 5px;
-  margin-top: 5px;
-  color: rgb(153, 153, 153);
 }
-.resistences{
-  display: flex;
-  flex-direction: row;
+.table-resistence{
+  display:flex;
+  justify-content: center;
 }
-.resistences h4{
-  width: max-content;
-  height: fit-content;
-  margin-top: 10px;
+.table-resistence table{
+  margin:20px;
+  border:0.1px solid #1d1d1d;
 }
-.fisic-ammo{
+.table-resistence table td{
+border:0.1px solid #1d1d1d;
+text-align: center;
+padding: 5px;
+width: 100px;
+}
+.table-resistence table input{
+  border:none;
+  color:rgb(153, 153, 153);
+  text-align:center;
+  width:80%;
+}
+.table-defence{
+  display:flex;
+  justify-content: center;
+}
+.table-defence table{
+  margin:20px;
+  border:0.1px solid #1d1d1d;
+}
+.table-defence table td{
+  border:0.1px solid #1d1d1d;
+  text-align: center;
+  padding: 5px;
   width: 100px;
-  margin-top: 20px;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-.fisic-ammo input{
-  width: 90%;
-}
-.fisic-ammo h4{
-  color: rgb(153, 153, 153);
-  font: 15px "type writer";
-  width: fit-content;
-  margin: 0;
-  margin-left: 10px;
-}
-.fisic-ammo p {
-  width: 50%;
-}
-.defences{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 70px;
-  margin-top: 5px;
-}
-
-.defences p{
-  width: fit-content;
-  color: rgb(83, 83, 83);
-  font-size: 15px;
-  text-align: center;
-  margin-top: 2px;
-  margin: 1px;
-  margin-bottom: -5px;
-}
+  }
+  .table-defence table th{
+    border:0.1px solid #1d1d1d;
+    background-color: rgb(83, 83, 83);
+    color:black;
+    font-size:15px;
+    text-align: center;
+    padding: 5px;
+    width: 100px;
+    }
+  .table-defence table input{
+    border:none;
+    color:rgb(153, 153, 153);
+    text-align:center;
+    width:80%;
+  }
+  .next-page{
+    margin: 25px;
+    margin-bottom:0;
+    text-align:center;
+    filter: drop-shadow(1px 1px 6px rgb(2, 2, 2));
+  }
+  .next-page a{
+    text-decoration: none;
+    border:1px solid #1d1d1d;
+    border-radius:5px;
+    padding: 10px;
+    color:rgb(83, 83, 83);
+  }
