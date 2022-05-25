@@ -29,30 +29,49 @@ function salvar() {
   localStorage.vigour = $("#vigor").val();
   localStorage.presence = $("#presenca").val();
   localStorage.intellect = $("#intelecto").val();
-
 }
 
 $("window").ready(function () {
-  afinidade();soma();carregar()
+  afinidade();
+  soma();
+  carregar();
 });
-$("#afinidade").change(function () {afinidade()});
-$("input").on('keyup',function (){salvar()});
-$("#classe").change(function (){salvar()});
-$("#trilha").change(function (){salvar()});
-$("#patente").change(function (){salvar()});
-$("#origem").change(function (){salvar()});
-$("#afinidade").change(function (){salvar()});
-var textarea = document.getElementById('notes-area');
-textarea.addEventListener("keyup", function (){
-  localStorage.txt = textarea.value ;
-} , false);
+$("#afinidade").change(function () {
+  afinidade();
+});
+$("input").on("keyup", function () {
+  salvar();
+});
+$("#classe").change(function () {
+  salvar();
+});
+$("#trilha").change(function () {
+  salvar();
+});
+$("#patente").change(function () {
+  salvar();
+});
+$("#origem").change(function () {
+  salvar();
+});
+$("#afinidade").change(function () {
+  salvar();
+});
+var textarea = document.getElementById("notes-area");
+textarea.addEventListener(
+  "keyup",
+  function () {
+    localStorage.txt = textarea.value;
+  },
+  false
+);
 function carregar() {
   $("#player").val(localStorage.nameP);
   $("#personagem").val(localStorage.nameA);
   $("#idade").val(localStorage.bDate);
   $("#damage").val(localStorage.dmg);
   $("#body").val(localStorage.bdy);
-  EP.value =localStorage.eP;
+  EP.value = localStorage.eP;
   $("#increment").val(localStorage.multi);
   $("#residencePlace").val(localStorage.placeR);
   photo.src = localStorage.imgR;
@@ -66,7 +85,7 @@ function carregar() {
   $("#vigor").val(localStorage.vigour);
   $("#presenca").val(localStorage.presence);
   $("#intelecto").val(localStorage.intellect);
-  textarea.value = localStorage.txt
+  textarea.value = localStorage.txt;
 }
 
 function saveBars() {
@@ -162,7 +181,6 @@ const data = {
       area: "",
     },
   ],
-
 };
 ///////////////////////////life///////////////////////
 $(".lifeBar").css(
@@ -548,99 +566,139 @@ fundoEscuro.addEventListener("click", () => {
   fundoEscuro.style.display = "none";
 });
 
-
 //////////%%%%////////////////////////
 $("#EP").blur(function () {
   var verifyInt = /\d+/g;
   if ($("#EP").val().match(verifyInt) != null) {
-    EP.value = EP.value + "%"
-}});
+    EP.value = EP.value + "%";
+  }
+});
 $("#EP").focus(function () {
   $("#EP").val("");
 });
 //////////%%%%////////////////////////
-$(window).scroll(function(e){ 
-  var $el = $('.rollDices');
-  var isPositionFixed = ($el.css('position') == 'sticky');
-  if ($(this).scrollTop() > 211 && !isPositionFixed){ 
-    $el.css({'position': 'fixed', 'top': '0px'})
+$(window).scroll(function (e) {
+  var $el = $(".rollDices");
+  var isPositionFixed = $el.css("position") == "sticky";
+  if ($(this).scrollTop() > 211 && !isPositionFixed) {
+    $el.css({ position: "fixed", top: "0px" });
   }
-  if ($(this).scrollTop() < 211 && isPositionFixed){
-    $el.css({'position': 'sticky', 'top': '0px'})
-  } 
+  if ($(this).scrollTop() < 211 && isPositionFixed) {
+    $el.css({ position: "sticky", top: "0px" });
+  }
 });
 
 /////////////////mudar logo/////////////////////
-function afinidade(){
-  if($("#afinidade").val() == "Conhecimento"){
-    $(".ordem").attr("src", "imagens/Conhecimento.png")
-  }else if($("#afinidade").val() == "Energia"){
-    $(".ordem").attr("src", "imagens/Energia.png")
-  }else if ($("#afinidade").val() == "Morte"){
-    $(".ordem").attr("src", "imagens/Morte.png")
-  }else if($("#afinidade").val() == "Sangue"){
-    $(".ordem").attr("src", "imagens/Sangue.png")
-  }else{$(".ordem").attr("src", "imagens/ordem.png")}
+function afinidade() {
+  if ($("#afinidade").val() == "Conhecimento") {
+    $(".ordem").attr("src", "imagens/Conhecimento.png");
+  } else if ($("#afinidade").val() == "Energia") {
+    $(".ordem").attr("src", "imagens/Energia.png");
+  } else if ($("#afinidade").val() == "Morte") {
+    $(".ordem").attr("src", "imagens/Morte.png");
+  } else if ($("#afinidade").val() == "Sangue") {
+    $(".ordem").attr("src", "imagens/Sangue.png");
+  } else {
+    $(".ordem").attr("src", "imagens/ordem.png");
+  }
 }
 ////////////////////////////////////////////////
 var numeros = [];
 function novoNumero(index) {
-    var sugestao = (Math.round(Math.random() * 20 + 1));
-    if (index.value == 1 && sugestao == numeros[0]) sugestao = novoNumero(index.value);
-    return sugestao;
+  var sugestao = Math.round(Math.random() * 20 + 1);
+  if (index.value == 1 && sugestao == numeros[0])
+    sugestao = novoNumero(index.value);
+  return sugestao;
 }
 /////////////rolarAtributos//////////////////////
 
 /////////////rolarAtributos//////////////////////
 function soma() {
-  $("#input-3").val(Number($("#input-1").val()) + Number($("#input-2").val()))
+  $("#input-3").val(Number($("#input-1").val()) + Number($("#input-2").val()));
   //////////////////////
-  $("#input-6").val(Number($("#input-4").val()) + Number($("#input-5").val()))
+  $("#input-6").val(Number($("#input-4").val()) + Number($("#input-5").val()));
   //////////////////////
-  $("#input-9").val(Number($("#input-7").val()) + Number($("#input-8").val()))
+  $("#input-9").val(Number($("#input-7").val()) + Number($("#input-8").val()));
   //////////////////////
-  $("#input-12").val(Number($("#input-10").val()) + Number($("#input-11").val()))
+  $("#input-12").val(
+    Number($("#input-10").val()) + Number($("#input-11").val())
+  );
   //////////////////////
-  $("#input-15").val(Number($("#input-13").val()) + Number($("#input-14").val()))
+  $("#input-15").val(
+    Number($("#input-13").val()) + Number($("#input-14").val())
+  );
   //////////////////////
-  $("#input-18").val(Number($("#input-16").val()) + Number($("#input-17").val()))
+  $("#input-18").val(
+    Number($("#input-16").val()) + Number($("#input-17").val())
+  );
   //////////////////////
-  $("#input-21").val(Number($("#input-19").val()) + Number($("#input-20").val()))
+  $("#input-21").val(
+    Number($("#input-19").val()) + Number($("#input-20").val())
+  );
   //////////////////////
-  $("#input-24").val(Number($("#input-22").val()) + Number($("#input-23").val()))
+  $("#input-24").val(
+    Number($("#input-22").val()) + Number($("#input-23").val())
+  );
   //////////////////////
-  $("#input-27").val(Number($("#input-25").val()) + Number($("#input-26").val()))
+  $("#input-27").val(
+    Number($("#input-25").val()) + Number($("#input-26").val())
+  );
   //////////////////////
-  $("#input-30").val(Number($("#input-28").val()) + Number($("#input-29").val()))
+  $("#input-30").val(
+    Number($("#input-28").val()) + Number($("#input-29").val())
+  );
   //////////////////////
-  $("#input-33").val(Number($("#input-31").val()) + Number($("#input-32").val()))
+  $("#input-33").val(
+    Number($("#input-31").val()) + Number($("#input-32").val())
+  );
   //////////////////////
-  $("#input-36").val(Number($("#input-34").val()) + Number($("#input-35").val()))
+  $("#input-36").val(
+    Number($("#input-34").val()) + Number($("#input-35").val())
+  );
   //////////////////////
-  $("#input-39").val(Number($("#input-37").val()) + Number($("#input-38").val()))
+  $("#input-39").val(
+    Number($("#input-37").val()) + Number($("#input-38").val())
+  );
   //////////////////////
-  $("#input-42").val(Number($("#input-40").val()) + Number($("#input-41").val()))
+  $("#input-42").val(
+    Number($("#input-40").val()) + Number($("#input-41").val())
+  );
   //////////////////////
-  $("#input-45").val(Number($("#input-43").val()) + Number($("#input-44").val()))
+  $("#input-45").val(
+    Number($("#input-43").val()) + Number($("#input-44").val())
+  );
   //////////////////////
-  $("#input-48").val(Number($("#input-46").val()) + Number($("#input-47").val()))
+  $("#input-48").val(
+    Number($("#input-46").val()) + Number($("#input-47").val())
+  );
   //////////////////////
-  $("#input-51").val(Number($("#input-49").val()) + Number($("#input-50").val()))
+  $("#input-51").val(
+    Number($("#input-49").val()) + Number($("#input-50").val())
+  );
   //////////////////////
-  $("#input-54").val(Number($("#input-52").val()) + Number($("#input-53").val()))
+  $("#input-54").val(
+    Number($("#input-52").val()) + Number($("#input-53").val())
+  );
   //////////////////////
-  $("#input-57").val(Number($("#input-55").val()) + Number($("#input-56").val()))
+  $("#input-57").val(
+    Number($("#input-55").val()) + Number($("#input-56").val())
+  );
   //////////////////////
-  $("#input-60").val(Number($("#input-58").val()) + Number($("#input-59").val()))
+  $("#input-60").val(
+    Number($("#input-58").val()) + Number($("#input-59").val())
+  );
   //////////////////////
-  $("#input-63").val(Number($("#input-61").val()) + Number($("#input-62").val()))
+  $("#input-63").val(
+    Number($("#input-61").val()) + Number($("#input-62").val())
+  );
   //////////////////////
-  $("#input-66").val(Number($("#input-64").val()) + Number($("#input-65").val()))
-
+  $("#input-66").val(
+    Number($("#input-64").val()) + Number($("#input-65").val())
+  );
 }
 /* Soma valores */
-$(".outros").on('keyup', soma);
+$(".outros").on("keyup", soma);
 $(".outros").change(soma);
-$("[data-first]").on('keyup', soma);
-$('[data-first]').change(soma)
+$("[data-first]").on("keyup", soma);
+$("[data-first]").change(soma);
 //////////////////
